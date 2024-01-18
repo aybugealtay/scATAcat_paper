@@ -8,7 +8,7 @@ The provided code reproduces the figures presented in the manuscript. To enhance
     - Generating synthetic bulk dataset for fesibility study
     - Differential accesibility analysis for the prototype bulk ATAC-seq samples
 
-    Outputs of the preprocessing are stored in `Data` folder.
+    Outputs of the preprocessing are stored in the `Data` folder.
   
 - **Notebooks**
     - Notebooks to reproduce figures in the manuscript
