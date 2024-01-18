@@ -1,0 +1,39 @@
+for file in  res0.2-apply_scATAcat_with_Corces2016_prototypes.ipynb res0.4-apply_scATAcat_with_Corces2016_prototypes.ipynb res0.6-apply_scATAcat_with_Corces2016_prototypes.ipynb res0.8-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.0-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.2-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.4-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.6-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.8-apply_scATAcat_with_Corces2016_prototypes.ipynb res2.0-apply_scATAcat_with_Corces2016_prototypes.ipynb
+do
+    jupyter nbconvert --to notebook --execute $file --inplace
+done
+
+for file in  res0.2-apply_scATAcat_with_Corces2016_prototypes.ipynb res0.4-apply_scATAcat_with_Corces2016_prototypes.ipynb res0.6-apply_scATAcat_with_Corces2016_prototypes.ipynb res0.8-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.0-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.2-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.4-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.6-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.8-apply_scATAcat_with_Corces2016_prototypes.ipynb res2.0-apply_scATAcat_with_Corces2016_prototypes.ipynb
+do
+    sed -i 's/02_ENCODE_coverage_by_prototypes_matrix/02_ENCODE_coverage_by_cell_matrix/g' $file
+done
+
+
+for file in  res0.2-apply_scATAcat_with_Corces2016_prototypes.ipynb res0.4-apply_scATAcat_with_Corces2016_prototypes.ipynb res0.6-apply_scATAcat_with_Corces2016_prototypes.ipynb res0.8-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.0-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.2-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.4-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.6-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.8-apply_scATAcat_with_Corces2016_prototypes.ipynb res2.0-apply_scATAcat_with_Corces2016_prototypes.ipynb
+do
+    sed -i 's/02_ENCODE_coverage_by_prototypes_matrix/02_ENCODE_coverage_by_cell_matrix/g' $file
+done
+
+for file in res0.4-apply_scATAcat_with_Corces2016_prototypes.ipynb res0.6-apply_scATAcat_with_Corces2016_prototypes.ipynb res0.8-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.0-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.2-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.4-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.6-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.8-apply_scATAcat_with_Corces2016_prototypes.ipynb res2.0-apply_scATAcat_with_Corces2016_prototypes.ipynb
+do
+    sed -i 's/Corces2016_bulk_ATAC\/02_ENCODE_coverage_by_cell_matrix/Corces2016_bulk_ATAC\/02_ENCODE_coverage_by_prototypes_matrixres0.2-apply_scATAcat_with_Corces2016_prototypes.ipynbfile
+
+
+for file in res0.2-apply_scATAcat_with_Corces2016_prototypes.ipynb res0.4-apply_scATAcat_with_Corces2016_prototypes.ipynb res0.6-apply_scATAcat_with_Corces2016_prototypes.ipynb res0.8-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.0-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.2-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.4-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.6-apply_scATAcat_with_Corces2016_prototypes.ipynb res1.8-apply_scATAcat_with_Corces2016_prototypes.ipynb res2.0-apply_scATAcat_with_Corces2016_prototypes.ipynb
+do
+sed -i 's/scATAcat\.preprocess_bulk_adata/bulk_completeFeatures_adata=scATAcat\.preprocess_bulk_adata/' $file 
+done
+
+
+for res in 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0
+do
+scp resX-apply_scATAcat_with_Corces2016_prototypes.ipynb res$res-apply_scATAcat_with_Corces2016_prototypes.ipynb
+sed -i "s/RESOLUTIONX/res/" res$res-apply_scATAcat_with_Corces2016_prototypes.ipynb 
+done
+
+for res in 0.1 0.2 
+do
+scp resX-apply_scATAcat_with_Corces2016_prototypes.ipynb res$res-apply_scATAcat_with_Corces2016_prototypes.ipynb
+sed -i "s/RESOLUTIONX/$res/" res$res-apply_scATAcat_with_Corces2016_prototypes.ipynb 
+done
+

@@ -1,0 +1,4 @@
+Number of Cells	11909
+Number of Merged Regions	47798
+Number of Multiplets	809
+Multiplet Percent	6.793181627340667

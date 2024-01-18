@@ -1,0 +1,15 @@
+cd ../../../data/NeurIPS_BM_scmultiome/01_fragments_file/
+sort -k 1,1 -k2,2n NeurIPS2021_s1d1_fragments.tsv > NeurIPS2021_s1d1_fragments.sort.bed
+bgzip NeurIPS2021_s1d1_fragments.sort.bed
+tabix -p bed NeurIPS2021_s1d1_fragments.sort.bed
+
+
+## remove chrM
+
+sed '/^chrM/d' NeurIPS2021_s1d1_fragments.sort.bed > NeurIPS2021_s1d1_fragments_no_chrMt.sort.bed
+
+# bgzip and tabix
+
+bgzip -k  NeurIPS2021_s1d1_fragments_no_chrMt.sort.bed
+
+tabix -p bed NeurIPS2021_s1d1_fragments_no_chrMt.sort.bed.gz
