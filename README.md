@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/744623201.svg)](https://zenodo.org/doi/10.5281/zenodo.10529632)
+
 ### Code reproducing the figures in the scATAcat manuscript
 
 The provided code reproduces the figures presented in the manuscript. To enhance accessibility, the code and notebooks are organized into the following structure:
