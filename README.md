@@ -7,7 +7,9 @@ The provided code reproduces the figures presented in the manuscript. To enhance
     - Doublet detection for single-cell (PBMC) dataset
     - Generating synthetic bulk dataset for fesibility study
     - Differential accesibility analysis for the prototype bulk ATAC-seq samples
-      
+
+    Outputs of the preprocessing are stored in `Data` folder.
+  
 - **Notebooks**
     - Notebooks to reproduce figures in the manuscript
     -  For each dataset, notebooks include scripts to apply:
