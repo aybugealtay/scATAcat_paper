@@ -1,4 +1,4 @@
-### Code for the scATAcat Manuscript
+### Code reproducing the figures in the scATAcat manuscript
 
 The provided code reproduces the figures presented in the manuscript. To enhance accessibility, the code and notebooks are organized into the following structure:
 
