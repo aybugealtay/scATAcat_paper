@@ -20,7 +20,7 @@ The provided code reproduces the figures presented in the manuscript. To enhance
     - Figures and output files resulting from the notebook runs
    
 - **Data**
-    - Placeholder for the data folder. The content of this file can be access from Zenado:
+    - Placeholder for the data folder. The content of data folder can be access from Zenado:
  
-All the files that are exceeding the limit are also in the same zenado repo:
+All the files that are exceeding the github file limit are also located in the same zenado repo:
  
