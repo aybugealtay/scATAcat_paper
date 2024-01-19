@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/744623201.svg)](https://zenodo.org/doi/10.5281/zenodo.10529632)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10532547.svg)](https://doi.org/10.5281/zenodo.10532547)
 
 ### Code reproducing the figures in the scATAcat manuscript
 
