@@ -1,0 +1,6 @@
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# exlude WS folders 
+**/WS/
+
