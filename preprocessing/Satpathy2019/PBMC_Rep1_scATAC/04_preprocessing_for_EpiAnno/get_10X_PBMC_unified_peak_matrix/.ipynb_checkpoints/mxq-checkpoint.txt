@@ -1,0 +1,1 @@
+mxqsub -N PBMC_bedmap --tmpdir 501G --stdout=./PBMC_bedmap_out --stderr=./PBMC_bedmap_err --threads=10 --memory=500G --runtime=6h bash /project/scATAC_analysis/scATAcat_review/preprocessing/Satpathy2019/PBMC_Rep1_scATAC/04_preprocessing_for_EpiAnno/get_10X_PBMC_unified_peak_matrix/01_get_unified_pek_coverage.sh

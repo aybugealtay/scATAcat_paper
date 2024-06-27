@@ -1,0 +1,1 @@
+mxqsub -N BMMC_D6T1 --tmpdir 501G --stdout=./BMMC_D6T1_out --stderr=./BMMC_D6T1_err --threads=10 --memory=500G --runtime=6h bash /project/scATAC_analysis/scATAcat_review/preprocessing/Granja2019/BMMC_D6T1/04b_create_ENCODE_cov_per_cell_matrix_job.sh

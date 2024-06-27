@@ -1,0 +1,5 @@
+## training: Zhu 2023 brain cerebral cortex
+## test: Morabito 2021
+source /pkg/python-3.8.9-1/profile 
+# peakrate is decreased to --peak_rate 0.05 due to memory issue
+python3.8 code/run_crossdataset_projection_GPU_gameboycolor.py -d /project/scATAC_analysis/scATAcat_review/data/Zhu2023_brain_scmultiome/01_preprocessing_for_Cellcano/Morabito2021_brainCortex_unified_peak_matrix/Zhu2023_brain_adult1_Morabito2021_brainCortex_peaks_per_cell_matrix.hkl -c /project/scATAC_analysis/scATAcat_review/data/Zhu2023_brain_scmultiome/01_preprocessing_for_Cellcano/Morabito2021_brainCortex_unified_peak_matrix/Zhu2023_brain_adult1_Morabito2021_brainCortexZhu2023_brain_adult1_cell_labels.hkl -t /project/scATAC_analysis/scATAcat_review/data/Morabito2021_brainCortex_snATAC/04_peaks_and_genesScore_matrix_ArchR/input_for_EpiAnno/PeakMatrix.hkl -o /project/scATAC_analysis/scATAcat_review/results/Fig8-Morabito2021_brainCortex_snATAC/Fig8-apply_EpiAnno  --verbose VERBOSE 

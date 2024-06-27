@@ -1,0 +1,172 @@
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: BiocGenerics
+Loading required package: parallel
+
+Attaching package: 'BiocGenerics'
+
+The following objects are masked from 'package:parallel':
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following objects are masked from 'package:stats':
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from 'package:base':
+
+    Filter, Find, Map, Position, Reduce, anyDuplicated, append,
+    as.data.frame, basename, cbind, colnames, dirname, do.call,
+    duplicated, eval, evalq, get, grep, grepl, intersect, is.unsorted,
+    lapply, mapply, match, mget, order, paste, pmax, pmax.int, pmin,
+    pmin.int, rank, rbind, rownames, sapply, setdiff, sort, table,
+    tapply, union, unique, unsplit, which.max, which.min
+
+Loading required package: S4Vectors
+
+Attaching package: 'S4Vectors'
+
+The following object is masked from 'package:base':
+
+    expand.grid
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: SummarizedExperiment
+Loading required package: MatrixGenerics
+Loading required package: matrixStats
+
+Attaching package: 'MatrixGenerics'
+
+The following objects are masked from 'package:matrixStats':
+
+    colAlls, colAnyNAs, colAnys, colAvgsPerRowSet, colCollapse,
+    colCounts, colCummaxs, colCummins, colCumprods, colCumsums,
+    colDiffs, colIQRDiffs, colIQRs, colLogSumExps, colMadDiffs,
+    colMads, colMaxs, colMeans2, colMedians, colMins, colOrderStats,
+    colProds, colQuantiles, colRanges, colRanks, colSdDiffs, colSds,
+    colSums2, colTabulates, colVarDiffs, colVars, colWeightedMads,
+    colWeightedMeans, colWeightedMedians, colWeightedSds,
+    colWeightedVars, rowAlls, rowAnyNAs, rowAnys, rowAvgsPerColSet,
+    rowCollapse, rowCounts, rowCummaxs, rowCummins, rowCumprods,
+    rowCumsums, rowDiffs, rowIQRDiffs, rowIQRs, rowLogSumExps,
+    rowMadDiffs, rowMads, rowMaxs, rowMeans2, rowMedians, rowMins,
+    rowOrderStats, rowProds, rowQuantiles, rowRanges, rowRanks,
+    rowSdDiffs, rowSds, rowSums2, rowTabulates, rowVarDiffs, rowVars,
+    rowWeightedMads, rowWeightedMeans, rowWeightedMedians,
+    rowWeightedSds, rowWeightedVars
+
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+
+Attaching package: 'Biobase'
+
+The following object is masked from 'package:MatrixGenerics':
+
+    rowMedians
+
+The following objects are masked from 'package:matrixStats':
+
+    anyMissing, rowMedians
+
+Possible Ensembl SSL connectivity problems detected.
+Please see the 'Connection Troubleshooting' section of the biomaRt vignette
+vignette('accessing_ensembl', package = 'biomaRt')Error in curl::curl_fetch_memory(url, handle = handle) : 
+  SSL certificate problem: certificate has expired
+
+
+ >>> DiffBind 3.0 includes substantial updates. See ?DiffBind3 for details on what has changed.
+Bcell_1 Bcell  Bcell control 1 bed
+Bcell_2 Bcell  Bcell control 2 bed
+Bcell_3 Bcell  Bcell control 3 bed
+Bcell_4 Bcell  Bcell control 4 bed
+CD4Tcell_1 CD4Tcell  CD4Tcell control 1 bed
+CD4Tcell_2 CD4Tcell  CD4Tcell control 2 bed
+CD4Tcell_3 CD4Tcell  CD4Tcell control 3 bed
+CD4Tcell_4 CD4Tcell  CD4Tcell control 4 bed
+CD4Tcell_5 CD4Tcell  CD4Tcell control 5 bed
+CD8Tcell_1 CD8Tcell  CD8Tcell control 1 bed
+CD8Tcell_2 CD8Tcell  CD8Tcell control 2 bed
+CD8Tcell_3 CD8Tcell  CD8Tcell control 3 bed
+CD8Tcell_4 CD8Tcell  CD8Tcell control 4 bed
+CD8Tcell_5 CD8Tcell  CD8Tcell control 5 bed
+Mono_1 Mono  Mono control 1 bed
+Mono_2 Mono  Mono control 2 bed
+Mono_3 Mono  Mono control 3 bed
+Mono_4 Mono  Mono control 4 bed
+Mono_5 Mono  Mono control 5 bed
+Mono_6 Mono  Mono control 6 bed
+NKcell_1 NKcell  NKcell control 1 bed
+NKcell_2 NKcell  NKcell control 2 bed
+NKcell_3 NKcell  NKcell control 3 bed
+NKcell_4 NKcell  NKcell control 4 bed
+NKcell_5 NKcell  NKcell control 5 bed
+NKcell_6 NKcell  NKcell control 6 bed
+pDC_1 pDC  pDC control 1 bed
+pDC_2 pDC  pDC control 2 bed
+pDC_3 pDC  pDC control 3 bed
+CLP_1 CLP  CLP control 1 bed
+CLP_2 CLP  CLP control 2 bed
+CLP_3 CLP  CLP control 3 bed
+CLP_4 CLP  CLP control 4 bed
+CLP_5 CLP  CLP control 5 bed
+CMP_1 CMP  CMP control 1 bed
+CMP_2 CMP  CMP control 2 bed
+CMP_3 CMP  CMP control 3 bed
+CMP_4 CMP  CMP control 4 bed
+CMP_5 CMP  CMP control 5 bed
+CMP_6 CMP  CMP control 6 bed
+CMP_7 CMP  CMP control 7 bed
+CMP_8 CMP  CMP control 8 bed
+GMP_1 GMP  GMP control 1 bed
+GMP_2 GMP  GMP control 2 bed
+GMP_3 GMP  GMP control 3 bed
+GMP_4 GMP  GMP control 4 bed
+GMP_5 GMP  GMP control 5 bed
+GMP_6 GMP  GMP control 6 bed
+GMP_7 GMP  GMP control 7 bed
+HSC_1 HSC  HSC control 1 bed
+HSC_2 HSC  HSC control 2 bed
+HSC_3 HSC  HSC control 3 bed
+HSC_4 HSC  HSC control 4 bed
+HSC_5 HSC  HSC control 5 bed
+HSC_6 HSC  HSC control 6 bed
+HSC_7 HSC  HSC control 7 bed
+LMPP_1 LMPP  LMPP control 1 bed
+LMPP_2 LMPP  LMPP control 2 bed
+LMPP_3 LMPP  LMPP control 3 bed
+MEP_1 MEP  MEP control 1 bed
+MEP_2 MEP  MEP control 2 bed
+MEP_3 MEP  MEP control 3 bed
+MEP_4 MEP  MEP control 4 bed
+MEP_5 MEP  MEP control 5 bed
+MEP_6 MEP  MEP control 6 bed
+MEP_7 MEP  MEP control 7 bed
+MPP_1 MPP  MPP control 1 bed
+MPP_2 MPP  MPP control 2 bed
+MPP_3 MPP  MPP control 3 bed
+MPP_4 MPP  MPP control 4 bed
+MPP_5 MPP  MPP control 5 bed
+MPP_6 MPP  MPP control 6 bed
+ERY_1 ERY  ERY control 1 bed
+ERY_2 ERY  ERY control 2 bed
+ERY_3 ERY  ERY control 3 bed
+ERY_4 ERY  ERY control 4 bed
+ERY_5 ERY  ERY control 5 bed
+ERY_6 ERY  ERY control 6 bed
+ERY_7 ERY  ERY control 7 bed
+ERY_8 ERY  ERY control 8 bed
+Computing summits...
+Re-centering peaks...
+Reads will be counted as Paired-end.
+Error in mcfork() : 
+  unable to fork, possible reason: Cannot allocate memory
+Calls: dba.count ... dba.parallel.lapply -> <Anonymous> -> mclapply -> lapply -> FUN -> mcfork
+Execution halted

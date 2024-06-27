@@ -1,0 +1,34 @@
+
+#!/usr/bin/bash
+
+## 10X Genomics Software Suite(s)
+##
+## Cell Ranger ATAC: Pipelines
+## https://support.10xgenomics.com/single-cell-atac/software/pipelines/latest/what-is-cell-ranger-atac
+##
+
+## main 10x genomics directory
+export TX_HOME="/package/sequencer/illumina/10xgenomics"
+export CR_HOME="$TX_HOME/cellranger-arc/current"
+
+## Celeranger Reference Genomes
+export TX_REFS="/project/genomes/10xgenomics/refdata-cellranger-atac"
+
+## bcl2fastq
+export PATH="$TX_HOME/bin:$CR_HOME:$PATH"
+
+## source cellranger environment
+source "$CR_HOME/sourceme.bash"
+
+## just a hint (anaconda install)
+python --version
+
+## set ulimit
+ulimit -n 4096
+
+## Set prompt kunterbunt :-)
+MACH=$(hostname -s)
+P_MACH="\[\033[01;30m\]\u@$MACH\[\033[m\]"
+P_PATH="\[\033[01;36m\][Cell Ranger ARC]\[\033[m\]"
+P_SIGN="\[\033[00;36m\]\W ## \[\033[m\]"
+export PS1="$P_MACH $P_PATH $P_SIGN "

@@ -1,0 +1,4 @@
+# get the coverage
+
+bedtools map -a  /project/scATAC_analysis/scATAcat_review/data/NeurIPS_BM_scmultiome/05_input_for_EpiAnno/NeurIPS_BM_scmultiome_peak_regions_sorted.bed -b /project/scATAC_analysis/scATAcat_review/benchmarking/Cellcano/apply_BM/train_GSM3722071_Bone_Marrow_Rep1/GSM3722071_Bone_Marrow_Rep1_lftOverhg38_fragments_sorted.tsv -c 4,5 -o collapse > /project/scATAC_analysis/scATAcat_review/data/Satpathy2019/Bone_Marrow_Rep1/04_preprocessing_for_EpiAnno/NeurIPS_unified_peak_matrix/GSM3722071_Bone_Marrow_Rep1_liftOverhg38_NeurIPS_BM_unified_mapping.bed
+

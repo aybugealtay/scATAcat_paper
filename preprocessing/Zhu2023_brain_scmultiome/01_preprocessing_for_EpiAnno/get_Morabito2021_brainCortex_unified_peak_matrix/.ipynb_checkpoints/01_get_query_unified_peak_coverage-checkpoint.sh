@@ -1,0 +1,4 @@
+# get the coverage
+
+bedtools map -a  /project/scATAC_analysis/scATAcat_review/data/Morabito2021_brainCortex_snATAC/04_peaks_and_genesScore_matrix_ArchR/input_for_EpiAnno/Morabito2021_brainCortex_snATAC_peak_regions_sorted.bed -b /project/scATAC_analysis/scATAcat_review/data/Zhu2023_brain_scmultiome/00_mapping/cr_count_Zhu2023_brain_adult1_2024-05-22/outs/atac_fragments.tsv.gz -c 4,5 -o collapse > /project/scATAC_analysis/scATAcat_review/data/Zhu2023_brain_scmultiome/01_preprocessing_for_Cellcano/Morabito2021_brainCortex_unified_peak_matrix/Zhu2023_brain_adult1_Morabito2021_brainCortex_unified_mapping.bed
+

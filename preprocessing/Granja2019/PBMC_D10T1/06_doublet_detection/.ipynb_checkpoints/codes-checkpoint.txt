@@ -1,0 +1,28 @@
+AMULET.sh /path/to/fragments.tsv.gz /path/to/singlecell.csv /path/to/human_autosomes.txt /path/to/repeatfilter.bed /path/to/output/ /path/to/shellscript/
+
+AMULET.sh /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/overlap_bulk_and_scATAC/sc_multiome/10X_PBMC_multiome/data_10X_PBMC_multiome_granulocytes_removed_ARC_1.0.0/test/pbmc_granulocyte_sorted_10k_atac_fragments.tsv.gz /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/overlap_bulk_and_scATAC/sc_multiome/10X_PBMC_multiome/doubletDetection_AMULET/singlecell.csv /project/scATAC_analysis/programs/AMULET/AMULET-1.1/human_autosomes.txt /project/scATAC_analysis/programs/AMULET/knownRepeatRegions/hg38_knownRepeatRegions.bed /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/overlap_bulk_and_scATAC/sc_multiome/10X_PBMC_multiome/doubletDetection_AMULET/out /project/scATAC_analysis/programs/AMULET/AMULET-1.1
+
+AMULET.sh /project/scATAC_analysis/scATAcat_review/data/Granja2019/PBMC_D10T1/01_prepare_fragments_file/final_fragment_files/GSM4138893_scATAC_PBMC_D10T1_liftOverhg38_no_chrMt_sorted_fragments.tsv.gz /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/overlap_bulk_and_scATAC/sc_multiome/10X_PBMC_multiome/doubletDetection_AMULET/singlecell.csv /project/scATAC_analysis/programs/AMULET/AMULET-1.1/human_autosomes.txt /project/scATAC_analysis/programs/AMULET/knownRepeatRegions/hg38_knownRepeatRegions.bed /project/scATAC_analysis/scATAcat_review/data/Granja2019/PBMC_D10T1/06_doublet_detection/out /project/scATAC_analysis/programs/AMULET/AMULET-1.1
+
+
+python3 AMULET.py --rfilter /project/scATAC_analysis/programs/AMULET/knownRepeatRegions/hg38_knownRepeatRegions.bed /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/overlap_bulk_and_scATAC/sc_multiome/10X_PBMC_multiome/doubletDetection_AMULET/out/Overlaps.txt /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/overlap_bulk_and_scATAC/sc_multiome/10X_PBMC_multiome/doubletDetection_AMULET/out/OverlapSummary.txt /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/overlap_bulk_and_scATAC/sc_multiome/10X_PBMC_multiome/doubletDetection_AMULET/out
+
+##############################################################
+
+python3 FragmentFileOverlapCounter.py BAMFILE BCMAP CHRLIST OUTDIR
+
+python3 FragmentFileOverlapCounter.py /project/scATAC_analysis/scATAcat_review/data/Granja2019/PBMC_D10T1/01_prepare_fragments_file/final_fragment_files/GSM4138893_scATAC_PBMC_D10T1_liftOverhg38_no_chrMt_sorted_fragments.tsv.gz /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/overlap_bulk_and_scATAC/sc_multiome/10X_PBMC_multiome/doubletDetection_AMULET/singlecell.csv /project/scATAC_analysis/programs/AMULET/AMULET-1.1/human_autosomes.txt /project/scATAC_analysis/scATAcat_review/data/Granja2019/PBMC_D10T1/06_doublet_detection/out
+
+
+
+python3 AMULET.py --rfilter /path/to/repeats.bed OVERLAPS OVERLAPSUMMARY OUTDIR
+
+python3 AMULET.py --rfilter /project/scATAC_analysis/programs/AMULET/knownRepeatRegions/hg38_knownRepeatRegions.bed /project/scATAC_analysis/scATAcat_review/data/Granja2019/PBMC_D10T1/06_doublet_detection/out/Overlaps.txt /project/scATAC_analysis/scATAcat_review/data/Granja2019/PBMC_D10T1/06_doublet_detection/out/OverlapSummary.txt /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/overlap_bulk_and_scATAC/sc_multiome/10X_PBMC_multiome/doubletDetection_AMULET/out
+
+
+
+
+
+
+
+

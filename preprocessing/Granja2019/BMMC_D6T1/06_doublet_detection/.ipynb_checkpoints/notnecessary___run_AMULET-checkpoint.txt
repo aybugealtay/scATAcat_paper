@@ -1,0 +1,45 @@
+Fragment file example:
+
+AMULET.sh /path/to/fragments.tsv.gz /path/to/singlecell.csv /path/to/human_autosomes.txt /path/to/repeatfilter.bed /path/to/output/ /path/to/shellscript/
+
+BAM file example:
+
+AMULET.sh /path/to/possorted.bam /path/to/singlecell.csv /path/to/human_autosomes.txt /path/to/repeatfilter.bed /path/to/output/ /path/to/shellscript/
+
+Note: If you know the input bam file is coordinate sorted and you get an error message saying it's not, please use the --forcesorted option. There is a problem with the SAMReader library not recognizing this flag correctly in the header.
+
+##################
+
+
+bam path:
+-----------------
+/project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/overlap_bulk_and_scATAC/sc_multiome/10X_PBMC_multiome/data_10X_PBMC_multiome_granulocytes_removed_ARC_1.0.0/test_if_BAM_complete/pbmc_granulocyte_sorted_10k_atac_possorted_bam.bam
+
+fragments path: 
+-----------------
+/project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/overlap_bulk_and_scATAC/sc_multiome/10X_PBMC_multiome/data_10X_PBMC_multiome_granulocytes_removed_ARC_1.0.0/test/pbmc_granulocyte_sorted_10k_atac_fragments.tsv.gz
+
+single_cell file:
+-----------------
+"Fragment file singlecell.csv input requires columns containing 'barcode' and 'is__cell_barcode':";" --> https://github.com/UcarLab/AMULET/blob/main/AMULET.sh
+
+repeat file:
+-----------------
+/project/scATAC_analysis/programs/AMULET/knownRepeatRegions/hg38_knownRepeatRegions.bed
+
+scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/overlap_bulk_and_scATAC/sc_multiome/10X_PBMC_multiome/doubletDetection_AMULET/singlecell.csv
+
+autosomal chr:
+----------------
+scATAC_analysis/programs/AMULET/AMULET-1.1/human_autosomes.txt
+
+--------------------------------------------------------------------
+AMULET.sh /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/overlap_bulk_and_scATAC/sc_multiome/10X_PBMC_multiome/data_10X_PBMC_multiome_granulocytes_removed_ARC_1.0.0/test/pbmc_granulocyte_sorted_10k_atac_fragments.tsv.gz /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/overlap_bulk_and_scATAC/sc_multiome/10X_PBMC_multiome/doubletDetection_AMULET/singlecell.csv /project/scATAC_analysis/programs/AMULET/AMULET-1.1/human_autosomes.txt /project/scATAC_analysis/programs/AMULET/knownRepeatRegions/hg38_knownRepeatRegions.bed /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/overlap_bulk_and_scATAC/sc_multiome/10X_PBMC_multiome/doubletDetection_AMULET/out /project/scATAC_analysis/programs/AMULET/AMULET-1.1
+
+----
+Running it all with sh file did not work due to complatibility issues with numpy stays package. I ran the python part via scanpy_py3.9 conda env and it did work!
+
+python3 AMULET.py --rfilter /path/to/repeats.bed OVERLAPS OVERLAPSUMMARY OUTDIR
+
+
+python3 AMULET.py --rfilter /project/scATAC_analysis/programs/AMULET/knownRepeatRegions/hg38_knownRepeatRegions.bed /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/overlap_bulk_and_scATAC/sc_multiome/10X_PBMC_multiome/doubletDetection_AMULET/out/Overlaps.txt /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/overlap_bulk_and_scATAC/sc_multiome/10X_PBMC_multiome/doubletDetection_AMULET/out/OverlapSummary.txt /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/overlap_bulk_and_scATAC/sc_multiome/10X_PBMC_multiome/doubletDetection_AMULET/out

@@ -1,0 +1,1 @@
+mxqsub -N diffbind_cor --stdout=diffbind_cor.out --stderr=diffbind2.err --threads=8 --memory=800G --runtime=10h Rscript-4.0.5 /project/scATAC_analysis/scATAcat_notebooks_for_paper/jan2024/preprocessing/Corces2016_bulk_ATAC/differentially_accessible_regions/all_BM_cell_types-for_NeurIPS_BM_sc_multiome/04_get_differentially_acessible_regions.r

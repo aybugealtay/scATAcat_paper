@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/project/scATAC_analysis/scATAcat_review/preprocessing/Satpathy2019/PBMC_Rep1_scATAC/04_preprocessing_for_EpiAnno/get_10X_PBMC_unified_peak_matrix/02_create_10XPBMC_peaks_per_cell_matrix.py", line 37, in <module>
+    GSM3722015_PBMC_Rep1_10X_peaks_per_cell_matrix_np = (np.array(GSM3722015_PBMC_Rep1_10X_peaks_per_cell_matrix)).astype(np.float32)
+NameError: name 'GSM3722015_PBMC_Rep1_10X_peaks_per_cell_matrix' is not defined

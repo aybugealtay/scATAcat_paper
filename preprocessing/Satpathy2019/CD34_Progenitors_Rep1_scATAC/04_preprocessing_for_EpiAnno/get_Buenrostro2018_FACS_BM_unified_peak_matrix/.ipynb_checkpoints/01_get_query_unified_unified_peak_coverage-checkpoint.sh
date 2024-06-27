@@ -1,0 +1,7 @@
+#1. pek region location:
+# /project/scATAC_analysis/scATAcat_review/data/Buenrostro2018_FACS_BM_scATAC/scATAC/03_input_for_EpiAnno/Buenrostro2018_FACS_BM_scATAC_peak_regions_sorted.bed
+
+
+# get the coverage
+
+bedtools map -a  /project/scATAC_analysis/scATAcat_review/data/Buenrostro2018_FACS_BM_scATAC/scATAC/03_input_for_EpiAnno/Buenrostro2018_FACS_BM_scATAC_peak_regions_sorted.bed -b /project/scATAC_analysis/scATAcat_review/benchmarking/Cellcano/apply_CD34cells/train_data_GSM3722029_CD34_Progenitors_Rep1/GSM3722029_CD34_Progenitors_Rep1_liftOverhg38_sorted_fragments.tsv.gz -c 4,5 -o collapse > /project/scATAC_analysis/scATAcat_review/data/Satpathy2019/CD34_Progenitors_Rep1_scATAC/04_preprocessing_for_EpiAnno/Buenrostro2018_FACS_BM_unified_peak_matrix/GSM3722029_CD34_Progenitors_Rep1_liftOverhg38_Buenrostro2018_FACS_BM_unified_mapping.bed

@@ -1,0 +1,8 @@
+AMULET.sh /path/to/fragments.tsv.gz /path/to/singlecell.csv /path/to/human_autosomes.txt /path/to/repeatfilter.bed /path/to/output/ /path/to/shellscript/
+AMULET.sh /path/to/fragments.tsv.gz /path/to/singlecell.csv /path/to/human_autosomes.txt /path/to/repeatfilter.bed /path/to/output/ /path/to/shellscript/
+
+conda activate scanpy_py3.9
+
+cd /project/scATAC_analysis/programs/AMULET/AMULET-1.1
+
+./AMULET.sh /project/scATAC_analysis/10X_scATAC_HumanBrain_Corces2020/preprocessing/cellranger_atac_counts/cr_count_scatac_humanBrain_Corces2020_2022-09-29/outs/fragments.tsv.gz /project/scATAC_analysis/10X_scATAC_HumanBrain_Corces2020/preprocessing/cellranger_atac_counts/cr_count_scatac_humanBrain_Corces2020_2022-09-29/outs/singlecell.csv /project/scATAC_analysis/programs/AMULET/AMULET-1.1/human_autosomes.txt /project/scATAC_analysis/programs/AMULET/knownRepeatRegions/hg38_knownRepeatRegions.bed /project/scATAC_analysis/scATAcat_review/data/Corces2020_brain_scATAC/03_doublet_detection/ /project/scATAC_analysis/programs/AMULET/AMULET-1.1

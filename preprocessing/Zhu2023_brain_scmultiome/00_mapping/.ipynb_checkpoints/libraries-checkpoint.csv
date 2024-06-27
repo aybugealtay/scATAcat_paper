@@ -1,0 +1,3 @@
+fastqs,sample,library_type
+/project/scATAC_analysis/NeurIPS2021_BM_scmultiome/data/scRNAseq_bam/fastq_local/libraries_neurips_site1_donor1_0_1_HFMHTDRXY,bamtofastq,Gene Expression
+/project/scATAC_analysis/NeurIPS2021_BM_scmultiome/data/bam/fastq/bamtofastq_S1,bamtofastq,Chromatin Accessibility

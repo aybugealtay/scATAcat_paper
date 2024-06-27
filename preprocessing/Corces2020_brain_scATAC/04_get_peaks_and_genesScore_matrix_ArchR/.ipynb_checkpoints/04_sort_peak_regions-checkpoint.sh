@@ -1,0 +1,1 @@
+sort-bed /project/scATAC_analysis/scATAcat_review/data/Corces2020_brain_scATAC/04_peaks_and_genesScore_matrix_ArchR/input_for_EpiAnno/peak_regions.tsv > /project/scATAC_analysis/scATAcat_review/data/Corces2020_brain_scATAC/04_peaks_and_genesScore_matrix_ArchR/input_for_EpiAnno/Corces2020_brain_scATAC_peak_regions_sorted.bed

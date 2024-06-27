@@ -1,0 +1,13 @@
+cd ../../../data/Satpathy2019/PBMC_Rep1_scATAC/01_fragment_files
+bgzip -d GSM3722015_PBMC_Rep1_liftOverhg38_sorted_fragments.tsv.gz -@ 10
+
+
+## remove chrM
+
+sed '/^chrM/d' GSM3722015_PBMC_Rep1_liftOverhg38_sorted_fragments.tsv > GSM3722015_PBMC_Rep1_liftOverhg38_sorted_fragments_no_chrMt.sort.bed
+
+# bgzip and tabix
+
+bgzip -k  GSM3722015_PBMC_Rep1_liftOverhg38_sorted_fragments_no_chrMt.sort.bed -@ 10
+
+tabix -p bed GSM3722015_PBMC_Rep1_liftOverhg38_sorted_fragments_no_chrMt.sort.bed.gz

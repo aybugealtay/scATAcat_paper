@@ -1,0 +1,4 @@
+mxqsub -N 01_get_ENCODE_cCRE --stdout=./01_get_ENCODE_cCRE_out --stderr=./01_get_ENCODE_cCRE_err --threads=8 --memory=500G --runtime=6h bash /project/scATAC_analysis/scATAcat_review/preprocessing/Morabito2021_brainCortex_snATAC/01_get_ENCODE_cCRE.sh
+
+
+mxqsub -N get_ENCODE_cCRE_mat  --stdout=./get_ENCODE_cCRE_mat_out --stderr=./get_ENCODE_cCRE_mat_err --threads=8 --memory=500G --runtime=3h bash /project/scATAC_analysis/scATAcat_review/preprocessing/Morabito2021_brainCortex_snATAC/02b_create_ENCODE_cov_per_cell_matrix_job.sh

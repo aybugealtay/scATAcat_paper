@@ -1,0 +1,49 @@
+/dev/shm/mxqd/mnt/job/51033772
+Python 3.7.6
+Martian Runtime - v4.0.5
+Serving UI at http://quokka.molgen.mpg.de:38871?auth=f4r5kdVAeNpckTSYCiTf8wKwGr3PoyAZTLnRisjmbLE
+
+Running preflight checks (please wait)...
+Checking FASTQ folder...
+Checking reference...
+Checking reference_path (/project/genomes/10xgenomics/atac-2.0.0/refdata-cellranger-arc-GRCh38-2020-A-2.0.0) on quokka.molgen.mpg.de...
+Checking optional arguments...
+mrc: v4.0.5
+
+mrp: v4.0.5
+
+Anaconda: Python 3.7.6
+
+numpy: 1.19.2
+
+scipy: 1.2.1
+
+pysam: 0.16.0.1
+
+h5py: 2.8.0
+
+pandas: 0.24.2
+
+STAR: 2.7.2a
+
+samtools: samtools 1.10
+Using htslib 1.10.2
+Copyright (C) 2019 Genome Research Ltd.
+
+2024-05-22 20:44:30 [runtime] (ready)           ID.cr_count_Zhu2023_brain_adult1_2024-05-22.SC_ATAC_GEX_COUNTER_CS.SC_ATAC_GEX_COUNTER.SPLIT_SAMPLE_DEF
+2024-05-22 20:44:30 [runtime] (run:local)       ID.cr_count_Zhu2023_brain_adult1_2024-05-22.SC_ATAC_GEX_COUNTER_CS.SC_ATAC_GEX_COUNTER.SPLIT_SAMPLE_DEF.fork0.chnk0.main
+2024-05-22 20:44:30 [runtime] (chunks_complete) ID.cr_count_Zhu2023_brain_adult1_2024-05-22.SC_ATAC_GEX_COUNTER_CS.SC_ATAC_GEX_COUNTER.SPLIT_SAMPLE_DEF
+2024-05-22 20:44:30 [runtime] (ready)           ID.cr_count_Zhu2023_brain_adult1_2024-05-22.SC_ATAC_GEX_COUNTER_CS.SC_ATAC_GEX_COUNTER._FASTQ_STAGER.ATAC_SETUP_CHUNKS
+2024-05-22 20:44:30 [runtime] (run:local)       ID.cr_count_Zhu2023_brain_adult1_2024-05-22.SC_ATAC_GEX_COUNTER_CS.SC_ATAC_GEX_COUNTER._FASTQ_STAGER.ATAC_SETUP_CHUNKS.fork0.chnk0.main
+2024-05-22 20:44:30 [runtime] (ready)           ID.cr_count_Zhu2023_brain_adult1_2024-05-22.SC_ATAC_GEX_COUNTER_CS.SC_ATAC_GEX_COUNTER._FASTQ_STAGER.GEX_SETUP_CHUNKS
+2024-05-22 20:44:30 [runtime] (run:local)       ID.cr_count_Zhu2023_brain_adult1_2024-05-22.SC_ATAC_GEX_COUNTER_CS.SC_ATAC_GEX_COUNTER._FASTQ_STAGER.GEX_SETUP_CHUNKS.fork0.chnk0.main
+2024-05-22 20:44:32 [runtime] (chunks_complete) ID.cr_count_Zhu2023_brain_adult1_2024-05-22.SC_ATAC_GEX_COUNTER_CS.SC_ATAC_GEX_COUNTER._FASTQ_STAGER.ATAC_SETUP_CHUNKS
+2024-05-22 20:44:32 [runtime] (ready)           ID.cr_count_Zhu2023_brain_adult1_2024-05-22.SC_ATAC_GEX_COUNTER_CS.SC_ATAC_GEX_COUNTER._ATAC_MATRIX_COMPUTER.MAKE_ATAC_SHARDS
+2024-05-22 20:44:32 [runtime] (run:local)       ID.cr_count_Zhu2023_brain_adult1_2024-05-22.SC_ATAC_GEX_COUNTER_CS.SC_ATAC_GEX_COUNTER._ATAC_MATRIX_COMPUTER.MAKE_ATAC_SHARDS.fork0.split
+2024-05-22 20:44:39 [runtime] (split_complete)  ID.cr_count_Zhu2023_brain_adult1_2024-05-22.SC_ATAC_GEX_COUNTER_CS.SC_ATAC_GEX_COUNTER._ATAC_MATRIX_COMPUTER.MAKE_ATAC_SHARDS
+2024-05-22 20:44:39 [runtime] (run:local)       ID.cr_count_Zhu2023_brain_adult1_2024-05-22.SC_ATAC_GEX_COUNTER_CS.SC_ATAC_GEX_COUNTER._ATAC_MATRIX_COMPUTER.MAKE_ATAC_SHARDS.fork0.chnk0.main
+2024-05-22 20:44:39 [runtime] (chunks_complete) ID.cr_count_Zhu2023_brain_adult1_2024-05-22.SC_ATAC_GEX_COUNTER_CS.SC_ATAC_GEX_COUNTER._FASTQ_STAGER.GEX_SETUP_CHUNKS
+2024-05-22 20:44:39 [runtime] (ready)           ID.cr_count_Zhu2023_brain_adult1_2024-05-22.SC_ATAC_GEX_COUNTER_CS.SC_ATAC_GEX_COUNTER._GEX_MATRIX_COMPUTER.MAKE_SHARD
+2024-05-22 20:44:39 [runtime] (run:local)       ID.cr_count_Zhu2023_brain_adult1_2024-05-22.SC_ATAC_GEX_COUNTER_CS.SC_ATAC_GEX_COUNTER._GEX_MATRIX_COMPUTER.MAKE_SHARD.fork0.split
+2024-05-22 20:44:44 [runtime] (split_complete)  ID.cr_count_Zhu2023_brain_adult1_2024-05-22.SC_ATAC_GEX_COUNTER_CS.SC_ATAC_GEX_COUNTER._GEX_MATRIX_COMPUTER.MAKE_SHARD
+2024-05-22 20:44:44 [runtime] (run:local)       ID.cr_count_Zhu2023_brain_adult1_2024-05-22.SC_ATAC_GEX_COUNTER_CS.SC_ATAC_GEX_COUNTER._GEX_MATRIX_COMPUTER.MAKE_SHARD.fork0.chnk0.main

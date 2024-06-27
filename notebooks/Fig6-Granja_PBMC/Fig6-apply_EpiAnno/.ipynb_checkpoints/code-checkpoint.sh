@@ -1,0 +1,5 @@
+## training: Satpathy PBMC rep 1
+## test: Granja PBMC scATAC
+source /pkg/python-3.8.9-1/profile 
+# peakrate is decreased to --peak_rate 0.05 due to memory issue
+python3.8 code/run_crossdataset_projection_GPU_gameboycolor.py -d /project/scATAC_analysis/scATAcat_review/data/Satpathy2019/PBMC_Rep1_scATAC/04_preprocessing_for_EpiAnno/Granja2019_PBMC_unified_peak_matrix/GSM3722015_PBMC_Rep1_Granja2019_PBMC_peaks_per_cell_matrix.hkl -c /project/scATAC_analysis/scATAcat_review/data/Satpathy2019/PBMC_Rep1_scATAC/04_preprocessing_for_EpiAnno/Granja2019_PBMC_unified_peak_matrix/GSM3722015_PBMC_cell_labels.hkl -t /project/scATAC_analysis/scATAcat_review/data/Granja2019/PBMC_D10T1/05_peaks_and_genesScore_matrix_ArchR/input_for_EpiAnno/PeakMatrix.hkl -o /project/scATAC_analysis/scATAcat_review/results/Fig6-Granja_PBMC_scATAC/Fig6-apply_EpiAnno --verbose VERBOSE --peak_rate 0.05

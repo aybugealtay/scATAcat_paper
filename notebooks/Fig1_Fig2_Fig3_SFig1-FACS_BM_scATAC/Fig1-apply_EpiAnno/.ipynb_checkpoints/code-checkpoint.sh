@@ -1,0 +1,5 @@
+## training: Satpathy PBMC rep 1
+## test: Granja PBMC scATAC
+source /pkg/python-3.8.9-1/profile 
+
+python3.8 code/run_crossdataset_projection_GPU_gameboycolor.py -d /project/scATAC_analysis/scATAcat_review/data/Satpathy2019/CD34_Progenitors_Rep1_scATAC/04_preprocessing_for_EpiAnno/Buenrostro2018_FACS_BM_unified_peak_matrix/GSM3722071_Bone_Marrow_Rep1_unified_Buenrostro2018_FACS_BM_peaks_per_cell_matrix.hkl -c /project/scATAC_analysis/scATAcat_review/data/Satpathy2019/CD34_Progenitors_Rep1_scATAC/04_preprocessing_for_EpiAnno/Buenrostro2018_FACS_BM_unified_peak_matrix/GSM3722071_Bone_Marrow_Rep1_cell_labels.hkll -t /project/scATAC_analysis/scATAcat_review/data/Buenrostro2018_FACS_BM_scATAC/scATAC/03_input_for_EpiAnno/PeakMatrix.hkl -o /project/scATAC_analysis/scATAcat_review/results/Fig1_Fig2_Fig3_SFig1-FACS_BM_scATAC/Fig1-apply_EpiAnno --verbose VERBOSE

@@ -1,0 +1,1347 @@
+
+           ___      .______        ______  __    __  .______      
+          /   \     |   _  \      /      ||  |  |  | |   _  \     
+         /  ^  \    |  |_)  |    |  ,----'|  |__|  | |  |_)  |    
+        /  /_\  \   |      /     |  |     |   __   | |      /     
+       /  _____  \  |  |\  \\___ |  `----.|  |  |  | |  |\  \\___.
+      /__/     \__\ | _| `._____| \______||__|  |__| | _| `._____|
+    
+Logging With ArchR!
+
+Start Time : 2024-05-01 22:48:56
+
+------- ArchR Info
+
+ArchRThreads = 16
+ArchRGenome = Hg38
+
+------- System Info
+
+Computer OS = unix
+Total Cores = 128
+
+------- Session Info
+
+R version 4.1.0 (2021-05-18)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: MarIuX64 2.0 GNU/Linux
+
+Matrix products: default
+BLAS:   /pkg/R-4.1.0-0/lib/R/lib/libRblas.so
+LAPACK: /pkg/R-4.1.0-0/lib/R/lib/libRlapack.so
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8 LC_NUMERIC=C         LC_TIME=C           
+ [4] LC_COLLATE=C         LC_MONETARY=C        LC_MESSAGES=C       
+ [7] LC_PAPER=C           LC_NAME=C            LC_ADDRESS=C        
+[10] LC_TELEPHONE=C       LC_MEASUREMENT=C     LC_IDENTIFICATION=C 
+
+attached base packages:
+ [1] grid      parallel  stats4    stats     graphics  grDevices utils    
+ [8] datasets  methods   base     
+
+other attached packages:
+ [1] uwot_0.1.14                 gridExtra_2.3              
+ [3] nabor_0.5.0                 SeuratObject_4.1.3         
+ [5] Seurat_4.3.0                ArchR_1.0.1                
+ [7] magrittr_2.0.3              rhdf5_2.36.0               
+ [9] Matrix_1.5-1                data.table_1.14.2          
+[11] SummarizedExperiment_1.22.0 Biobase_2.52.0             
+[13] GenomicRanges_1.44.0        GenomeInfoDb_1.33.7        
+[15] IRanges_2.26.0              S4Vectors_0.30.0           
+[17] BiocGenerics_0.38.0         MatrixGenerics_1.4.0       
+[19] matrixStats_0.62.0          ggplot2_3.3.6              
+
+loaded via a namespace (and not attached):
+  [1] Rtsne_0.16             colorspace_2.0-3       deldir_1.0-6          
+  [4] ellipsis_0.3.2         ggridges_0.5.3         IRdisplay_1.1         
+  [7] XVector_0.32.0         base64enc_0.1-3        spatstat.data_3.0-0   
+ [10] farver_2.1.1           leiden_0.3.8           listenv_0.8.0         
+ [13] ggrepel_0.9.1          fansi_1.0.3            codetools_0.2-18      
+ [16] splines_4.1.0          polyclip_1.10-0        IRkernel_1.3          
+ [19] jsonlite_1.8.2         Cairo_1.5-12.2         ica_1.0-3             
+ [22] cluster_2.1.2          png_0.1-7              spatstat.sparse_3.0-0 
+ [25] sctransform_0.3.5      shiny_1.6.0            BiocManager_1.30.15   
+ [28] compiler_4.1.0         httr_1.4.4             assertthat_0.2.1      
+ [31] fastmap_1.1.0          lazyeval_0.2.2         cli_3.4.1             
+ [34] later_1.3.0            htmltools_0.5.3        tools_4.1.0           
+ [37] igraph_1.2.6           gtable_0.3.1           glue_1.6.2            
+ [40] GenomeInfoDbData_1.2.6 reshape2_1.4.4         RANN_2.6.1            
+ [43] dplyr_1.0.10           Rcpp_1.0.9             scattermore_0.7       
+ [46] vctrs_0.4.2            rhdf5filters_1.4.0     nlme_3.1-152          
+ [49] spatstat.explore_3.0-6 progressr_0.11.0       lmtest_0.9-40         
+ [52] spatstat.random_3.1-3  stringr_1.4.1          globals_0.16.1        
+ [55] mime_0.12              miniUI_0.1.1.1         lifecycle_1.0.3       
+ [58] irlba_2.3.5.1          gtools_3.9.3           goftest_1.2-3         
+ [61] future_1.28.0          zlibbioc_1.38.0        MASS_7.3-54           
+ [64] zoo_1.8-11             scales_1.2.1           spatstat.utils_3.0-1  
+ [67] promises_1.2.0.1       RColorBrewer_1.1-3     reticulate_1.26       
+ [70] pbapply_1.5-0          stringi_1.7.8          repr_1.1.4            
+ [73] rlang_1.0.6            pkgconfig_2.0.3        bitops_1.0-7          
+ [76] evaluate_0.14          lattice_0.20-44        tensor_1.5            
+ [79] ROCR_1.0-11            purrr_0.3.5            Rhdf5lib_1.14.0       
+ [82] labeling_0.4.2         patchwork_1.1.0.9000   htmlwidgets_1.5.4     
+ [85] cowplot_1.1.1          tidyselect_1.1.2       parallelly_1.32.1     
+ [88] RcppAnnoy_0.0.19       plyr_1.8.7             R6_2.5.1              
+ [91] generics_0.1.3         pbdZMQ_0.3-7           DelayedArray_0.18.0   
+ [94] DBI_1.1.1              pillar_1.8.1           withr_2.5.0           
+ [97] fitdistrplus_1.1-8     abind_1.4-5            survival_3.2-11       
+[100] RCurl_1.98-1.3         sp_1.5-0               tibble_3.1.8          
+[103] future.apply_1.9.1     crayon_1.5.2           uuid_0.1-4            
+[106] KernSmooth_2.23-20     utf8_1.2.2             spatstat.geom_3.0-6   
+[109] plotly_4.9.3           digest_0.6.29          xtable_1.8-4          
+[112] tidyr_1.1.3            httpuv_1.6.6           munsell_0.5.0         
+[115] viridisLite_0.4.1     
+
+
+------- Log Info
+
+
+2024-05-01 22:48:57 : addGroupCoverages Input-Parameters, Class = list
+
+addGroupCoverages Input-Parameters$ArchRProj: length = 1
+
+addGroupCoverages Input-Parameters$groupBy: length = 1
+[1] "Clusters"
+
+
+addGroupCoverages Input-Parameters$useLabels: length = 1
+[1] TRUE
+
+
+addGroupCoverages Input-Parameters$minCells: length = 1
+[1] 40
+
+
+addGroupCoverages Input-Parameters$maxCells: length = 1
+[1] 500
+
+
+addGroupCoverages Input-Parameters$maxFragments: length = 1
+[1] 2.5e+07
+
+
+addGroupCoverages Input-Parameters$minReplicates: length = 1
+[1] 2
+
+
+addGroupCoverages Input-Parameters$maxReplicates: length = 1
+[1] 5
+
+
+addGroupCoverages Input-Parameters$sampleRatio: length = 1
+[1] 0.8
+
+
+addGroupCoverages Input-Parameters$kmerLength: length = 1
+[1] 6
+
+
+addGroupCoverages Input-Parameters$threads: length = 1
+[1] 16
+
+
+addGroupCoverages Input-Parameters$returnGroups: length = 1
+[1] FALSE
+
+
+addGroupCoverages Input-Parameters$parallelParam: length = 0
+NULL
+
+
+addGroupCoverages Input-Parameters$force: length = 1
+[1] FALSE
+
+
+addGroupCoverages Input-Parameters$verbose: length = 1
+[1] TRUE
+
+
+addGroupCoverages Input-Parameters$logFile: length = 1
+[1] "ArchRLogs/ArchR-addGroupCoverages-94492638a702-Date-2024-05-01_Time-22-48-56.log"
+
+
+
+2024-05-01 22:48:59 : 
+
+2024-05-01 22:48:59 : 
+
+2024-05-01 22:49:00 : 
+
+2024-05-01 22:49:00 : 
+
+2024-05-01 22:49:00 : 
+
+2024-05-01 22:49:00 : 
+
+2024-05-01 22:49:01 : 
+
+2024-05-01 22:49:01 : 
+
+2024-05-01 22:49:01 : 
+
+2024-05-01 22:49:01 : 
+
+2024-05-01 22:49:01 : 
+
+2024-05-01 22:49:02 : 
+
+2024-05-01 22:49:02 : 
+
+2024-05-01 22:49:02 : 
+
+2024-05-01 22:49:02 : 
+
+2024-05-01 22:49:02 : 
+
+2024-05-01 22:49:02 : 
+
+2024-05-01 22:49:02 : 
+
+2024-05-01 22:49:03 : 
+
+2024-05-01 22:49:03 : 
+2024-05-01 22:49:07 : Batch Execution w/ safelapply!, 0.195 mins elapsed.
+2024-05-01 22:49:07 : Group C1._.Rep1 (1 of 40) : Creating Group Coverage File : C1._.Rep1.insertions.coverage.h5, 0.199 mins elapsed.
+
+2024-05-01 22:49:08 : Group C1._.Rep1 (1 of 40) : cellGroupi, Class = character
+
+Group C1._.Rep1 (1 of 40) : cellGroupi: length = 22
+2024-05-01 22:49:08 : Group C1._.Rep2 (2 of 40) : Creating Group Coverage File : C1._.Rep2.insertions.coverage.h5, 0.202 mins elapsed.
+[1] "pbmc_granulocyte_sorted_10k_atac#TGGGCATGTTCATTTG-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#AAGACATAGGTGCTGC-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#GCTGTGATCCCTGGAA-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#CTCATGACATCGCTTT-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#AAGTTTGTCAGCACCA-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#GGGTTTCCAGCTTAAT-1"
+
+
+2024-05-01 22:49:08 : Group C1._.Rep2 (2 of 40) : cellGroupi, Class = character
+
+2024-05-01 22:49:08 : Group C2._.Rep1 (3 of 40) : Creating Group Coverage File : C2._.Rep1.insertions.coverage.h5, 0.205 mins elapsed.
+
+Group C1._.Rep2 (2 of 40) : cellGroupi: length = 17
+
+2024-05-01 22:49:08 : Group C2._.Rep1 (3 of 40) : cellGroupi, Class = character
+
+2024-05-01 22:49:08 : 
+2024-05-01 22:49:08 : Group C2._.Rep2 (4 of 40) : Creating Group Coverage File : C2._.Rep2.insertions.coverage.h5, 0.207 mins elapsed.
+2024-05-01 22:49:08 : Group C3._.Rep1 (5 of 40) : Creating Group Coverage File : C3._.Rep1.insertions.coverage.h5, 0.208 mins elapsed.
+[1] "pbmc_granulocyte_sorted_10k_atac#TGGGCATGTTCATTTG-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#CTCATGACATCGCTTT-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#AAGTTTGTCAGCACCA-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#GGGTTTCCAGCTTAAT-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#ACACTTGCAGCGCTTG-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#TACGTACAGGCATGTT-1"
+
+
+Group C2._.Rep1 (3 of 40) : cellGroupi: length = 58
+
+2024-05-01 22:49:08 : Group C2._.Rep2 (4 of 40) : cellGroupi, Class = character
+
+2024-05-01 22:49:08 : Group C3._.Rep1 (5 of 40) : cellGroupi, Class = character
+
+2024-05-01 22:49:08 : Group C3._.Rep2 (6 of 40) : Creating Group Coverage File : C3._.Rep2.insertions.coverage.h5, 0.211 mins elapsed.
+2024-05-01 22:49:08 : Group C4._.Rep1 (7 of 40) : Creating Group Coverage File : C4._.Rep1.insertions.coverage.h5, 0.212 mins elapsed.
+
+[1] "pbmc_granulocyte_sorted_10k_atac#AACCGCTCATATAACC-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#TTGGAGGCAGGCTTCG-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#ATTTGCAAGCCGCAAC-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#AAACCGCGTACTTCAC-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#GTTACGCCAAGTAAGC-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#CCAGACTCAAGGACCA-1"
+2024-05-01 22:49:08 : Group C4._.Rep2 (8 of 40) : Creating Group Coverage File : C4._.Rep2.insertions.coverage.h5, 0.213 mins elapsed.
+
+
+
+2024-05-01 22:49:08 : 
+Group C2._.Rep2 (4 of 40) : cellGroupi: length = 40
+
+2024-05-01 22:49:08 : Group C3._.Rep2 (6 of 40) : cellGroupi, Class = character
+
+2024-05-01 22:49:09 : Group C4._.Rep1 (7 of 40) : cellGroupi, Class = character
+Group C3._.Rep1 (5 of 40) : cellGroupi: length = 500
+
+2024-05-01 22:49:09 : Group C4._.Rep2 (8 of 40) : cellGroupi, Class = character
+
+2024-05-01 22:49:09 : 
+
+2024-05-01 22:49:09 : Group C5._.Rep1 (9 of 40) : Creating Group Coverage File : C5._.Rep1.insertions.coverage.h5, 0.215 mins elapsed.
+
+[1]
+ "pbmc_granulocyte_sorted_10k_atac#ACACTTAAGCTCCTTA-1"[1]
+
+[2] "pbmc_granulocyte_sorted_10k_atac#CACTAAGGTGAAACAA-1" "pbmc_granulocyte_sorted_10k_atac#CCGACAGGTCATCATC-1"
+2024-05-01 22:49:09 : Group C5._.Rep1 (9 of 40) : cellGroupi, Class = character
+
+
+
+2024-05-01 22:49:09 : 
+
+2024-05-01 22:49:09 : 
+[2][3] "pbmc_granulocyte_sorted_10k_atac#GGTGTCCAGCCAGTAT-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#CCCAGCACAAACTAAG-1" "pbmc_granulocyte_sorted_10k_atac#GTGTGTTAGGCATGTT-1"
+
+[4]2024-05-01 22:49:09 : Group C5._.Rep2 (10 of 40) : Creating Group Coverage File : C5._.Rep2.insertions.coverage.h5, 0.219 mins elapsed.
+[4]Group C3._.Rep2 (6 of 40) : cellGroupi: length = 40
+Group C4._.Rep2 (8 of 40) : cellGroupi: length = 40
+Group C4._.Rep1 (7 of 40) : cellGroupi: length = 146
+ "pbmc_granulocyte_sorted_10k_atac#ATGTTGTCAAGCCAGA-1"
+ "pbmc_granulocyte_sorted_10k_atac#CCTTAGTGTGATTACG-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#ATGGCCCAGTCAGGCC-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#ATCCTGACAATGCCTA-1"
+
+2024-05-01 22:49:09 : Group C5._.Rep2 (10 of 40) : cellGroupi, Class = character
+
+2024-05-01 22:49:09 : 
+[1]
+ "pbmc_granulocyte_sorted_10k_atac#TATCGCGAGAGAGGCT-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#GATGCATTCCGCCAAA-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#TGCTTCATCCATCAGG-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#GAACCTTAGACAGGTA-1"2024-05-01 22:49:09 : Group C6._.Rep1 (11 of 40) : Creating Group Coverage File : C6._.Rep1.insertions.coverage.h5, 0.222 mins elapsed.
+
+[5][5] "pbmc_granulocyte_sorted_10k_atac#GTGCGCAGTACCCACC-1"
+[6]
+2024-05-01 22:49:09 : 
+ "pbmc_granulocyte_sorted_10k_atac#TCTTGTCCATAAGCAA-1"
+[1]2024-05-01 22:49:09 : Group C6._.Rep2 (12 of 40) : Creating Group Coverage File : C6._.Rep2.insertions.coverage.h5, 0.223 mins elapsed.
+ "pbmc_granulocyte_sorted_10k_atac#AGCCTAAGTGCTTACT-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#GCCTGACAGGATCACT-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#TACTTCGTCAAGTGTC-1" "pbmc_granulocyte_sorted_10k_atac#TTTGCGACATCACTTC-1"[1]
+2024-05-01 22:49:09 : 
+ "pbmc_granulocyte_sorted_10k_atac#TCTGTGACAGGAAGCC-1"
+[2]
+
+[6] "pbmc_granulocyte_sorted_10k_atac#GGTATGTTCCAAGTTA-1"
+
+[3][4]2024-05-01 22:49:09 : Group C7._.Rep1 (13 of 40) : Creating Group Coverage File : C7._.Rep1.insertions.coverage.h5, 0.226 mins elapsed.
+ "pbmc_granulocyte_sorted_10k_atac#TCCATCATCCCTGATC-1"
+ "pbmc_granulocyte_sorted_10k_atac#AGCAGGTAGGTAAGGC-1"
+
+ "pbmc_granulocyte_sorted_10k_atac#ATCTTTGGTTCACCCA-1"Group C5._.Rep1 (9 of 40) : cellGroupi: length = 395
+
+[5] "pbmc_granulocyte_sorted_10k_atac#GACCTAGTCCCTGATC-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#GATGAGGGTTAAGGTT-1"
+[4]
+
+2024-05-01 22:49:09 : Group C6._.Rep1 (11 of 40) : cellGroupi, Class = character
+
+2024-05-01 22:49:09 : 
+
+2024-05-01 22:49:09 : 
+
+2024-05-01 22:49:09 : 
+
+2024-05-01 22:49:09 : Group C6._.Rep2 (12 of 40) : cellGroupi, Class = character
+
+2024-05-01 22:49:09 : Group C7._.Rep1 (13 of 40) : cellGroupi, Class = character
+
+2024-05-01 22:49:09 : Group C7._.Rep2 (14 of 40) : Creating Group Coverage File : C7._.Rep2.insertions.coverage.h5, 0.227 mins elapsed.
+ "pbmc_granulocyte_sorted_10k_atac#CCGGTTAAGTGAGGTA-1"Group C5._.Rep2 (10 of 40) : cellGroupi: length = 40
+
+[1]
+
+ "pbmc_granulocyte_sorted_10k_atac#TTCGTTAGTCCTTCTC-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#CTAGGACGTCAGGAAG-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#GCGATTTAGGCTACTG-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#CCAATATCAGGCGAGT-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#TAGTTTGAGGAACCAA-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#TACAGCTAGGCATTGT-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#GCTGTACCACTAGGTC-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#TCAGGAGCAACTAGCC-1"
+
+
+
+
+2024-05-01 22:49:09 : Group C8._.Rep1 (15 of 40) : Creating Group Coverage File : C8._.Rep1.insertions.coverage.h5, 0.229 mins elapsed.
+
+2024-05-01 22:49:09 : 
+
+2024-05-01 22:49:09 : 
+Group C6._.Rep2 (12 of 40) : cellGroupi: length = 40
+
+2024-05-01 22:49:09 : 
+
+2024-05-01 22:49:09 : Group C7._.Rep2 (14 of 40) : cellGroupi, Class = character
+2024-05-01 22:49:10 : Group C8._.Rep2 (16 of 40) : Creating Group Coverage File : C8._.Rep2.insertions.coverage.h5, 0.231 mins elapsed.
+
+
+2024-05-01 22:49:09 : 
+[1]
+
+ "pbmc_granulocyte_sorted_10k_atac#GTCTAGCCACTGACTA-1"
+
+[2]Group C7._.Rep1 (13 of 40) : cellGroupi: length = 500
+
+2024-05-01 22:49:10 : 
+Group C6._.Rep1 (11 of 40) : cellGroupi: length = 500
+ "pbmc_granulocyte_sorted_10k_atac#AACGACAAGGACACTT-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#ATGTTTGAGCAAGGGT-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#TTTAACGAGTAAGTCC-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#TTGATGTCAAATTCGT-1"
+
+[1] "pbmc_granulocyte_sorted_10k_atac#CTTGACGAGTTATGTG-1"
+2024-05-01 22:49:10 : Group C8._.Rep1 (15 of 40) : cellGroupi, Class = character
+[6]
+2024-05-01 22:49:10 : Group C8._.Rep2 (16 of 40) : cellGroupi, Class = character
+ "pbmc_granulocyte_sorted_10k_atac#TAACCTAAGTCACTCC-1"
+
+
+
+2024-05-01 22:49:10 : 
+
+2024-05-01 22:49:10 : 
+
+2024-05-01 22:49:10 : 
+
+2024-05-01 22:49:10 : 
+[1]
+[2][1] "pbmc_granulocyte_sorted_10k_atac#CTTATGTTCTGTGAGT-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#AATTAGCGTGTTGTAG-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#ATGTTTGAGGACAACA-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#CGATTCCTCTTTGACT-1" "pbmc_granulocyte_sorted_10k_atac#CAACTAGGTAACCAGC-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#GATGCAGCATAATCAC-1"
+
+[2] "pbmc_granulocyte_sorted_10k_atac#CATCACACACAAAGCG-1" "pbmc_granulocyte_sorted_10k_atac#GTGCAAGCACCTGGTG-1"
+
+[3][2] "pbmc_granulocyte_sorted_10k_atac#AAAGGCTCAATCCTAG-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#GTGTAACTCCTGCGAA-1"
+ "pbmc_granulocyte_sorted_10k_atac#GAGCAAGGTACTGAAT-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#TCCGGAATCACAAGCT-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#GTCATGAGTGTTGTGA-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#CGCTGTGCAGTTAGCC-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#TCACTGACATTAGGCC-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#ACCTACCTCTTTAAGG-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#GTCAAACTCATCCTCA-1"
+
+2024-05-01 22:49:10 : 
+
+Group C7._.Rep2 (14 of 40) : cellGroupi: length = 40
+
+
+2024-05-01 22:49:10 : 
+
+2024-05-01 22:49:10 : 
+
+2024-05-01 22:49:10 : 
+
+
+2024-05-01 22:49:10 : 
+
+
+2024-05-01 22:49:10 : 
+2024-05-01 22:49:10 : Group C1._.Rep1 (1 of 40) : Processed Fragments Chr (1 of 24), 0.242 mins elapsed.
+
+[1]
+2024-05-01 22:49:10 : 
+
+Group C8._.Rep2 (16 of 40) : cellGroupi: length = 40
+ "pbmc_granulocyte_sorted_10k_atac#GCCTTAACACAGCCTG-1"
+
+
+[2] "pbmc_granulocyte_sorted_10k_atac#GGAGCGATCTTTAGGA-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#CCCTGTTAGCACTTGG-1"
+2024-05-01 22:49:10 : 
+
+[4] "pbmc_granulocyte_sorted_10k_atac#TTCAGCACATAATGTC-1"
+
+[5]Group C8._.Rep1 (15 of 40) : cellGroupi: length = 500
+
+2024-05-01 22:49:10 : 
+
+2024-05-01 22:49:11 : 
+ "pbmc_granulocyte_sorted_10k_atac#GTCAATATCTTTGACT-1"
+
+2024-05-01 22:49:11 : 
+[6]
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:11 : 
+ "pbmc_granulocyte_sorted_10k_atac#GCTAGCCAGGCTAGAA-1"
+
+2024-05-01 22:49:11 : 
+[1]
+2024-05-01 22:49:11 : 
+ "pbmc_granulocyte_sorted_10k_atac#CCTTCGGTCATGGTTA-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#TGCTCAACACAACCTA-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#TCTAACTTCTTGTCTG-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#ACAAAGGTCCCGAACA-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#AGCGTGCTCCGGTATG-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#GGCTTCAAGCTATATG-1"
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:11 : 
+[1]
+ "pbmc_granulocyte_sorted_10k_atac#CGCCTCATCTTGCAGG-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#GCTATCCTCATGGCTG-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#AAGGTCAAGGAAGTAT-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#GTAGGAGGTTCATCTA-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#TGGCTATAGCCTCTCG-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#GACTAATGTGAGCAAG-1"
+
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:11 : 
+
+
+
+2024-05-01 22:49:11 : 
+
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:11 : 
+2024-05-01 22:49:11 : Group C2._.Rep1 (3 of 40) : Processed Fragments Chr (1 of 24), 0.26 mins elapsed.
+
+2024-05-01 22:49:11 : 
+
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:11 : 
+2024-05-01 22:49:11 : Group C1._.Rep2 (2 of 40) : Processed Fragments Chr (1 of 24), 0.262 mins elapsed.
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:11 : 
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+2024-05-01 22:49:12 : Group C9._.Rep1 (17 of 40) : Creating Group Coverage File : C9._.Rep1.insertions.coverage.h5, 0.266 mins elapsed.
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+2024-05-01 22:49:12 : Group C9._.Rep2 (18 of 40) : Creating Group Coverage File : C9._.Rep2.insertions.coverage.h5, 0.27 mins elapsed.
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : Group C9._.Rep1 (17 of 40) : cellGroupi, Class = character
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+2024-05-01 22:49:12 : Group C2._.Rep2 (4 of 40) : Processed Fragments Chr (1 of 24), 0.273 mins elapsed.
+
+
+2024-05-01 22:49:12 : Group C9._.Rep2 (18 of 40) : cellGroupi, Class = character
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+2024-05-01 22:49:12 : Group C4._.Rep2 (8 of 40) : Processed Fragments Chr (1 of 24), 0.276 mins elapsed.
+2024-05-01 22:49:12 : Group C3._.Rep2 (6 of 40) : Processed Fragments Chr (1 of 24), 0.276 mins elapsed.
+Group C9._.Rep1 (17 of 40) : cellGroupi: length = 500
+
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+[1] "pbmc_granulocyte_sorted_10k_atac#TTTCCTGAGGTGAAGC-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#CCTTCAATCTTAGTCT-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#TTTCCACCAGTTATCG-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#CATAGCTAGCCTGGTA-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#GATAAAGGTTTGCTGT-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#CTCGTTATCGTTTCGC-1"
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+Group C9._.Rep2 (18 of 40) : cellGroupi: length = 40
+
+2024-05-01 22:49:12 : 
+
+2024-05-01 22:49:12 : 
+2024-05-01 22:49:12 : Group C3._.Rep1 (5 of 40) : Processed Fragments Chr (1 of 24), 0.279 mins elapsed.
+
+2024-05-01 22:49:12 : 
+2024-05-01 22:49:12 : Group C10._.Rep1 (19 of 40) : Creating Group Coverage File : C10._.Rep1.insertions.coverage.h5, 0.279 mins elapsed.
+
+2024-05-01 22:49:12 : 
+
+
+2024-05-01 22:49:12 : 
+2024-05-01 22:49:12 : Group C10._.Rep2 (20 of 40) : Creating Group Coverage File : C10._.Rep2.insertions.coverage.h5, 0.28 mins elapsed.
+
+2024-05-01 22:49:12 : 
+[1] "pbmc_granulocyte_sorted_10k_atac#TCCTCAATCGCATTAA-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#AATAACCGTAATAGCT-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#CAGCTAAGTTGCTGGG-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#CTAGCGGGTCATTAGG-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#TCCAGGATCCTCAGTC-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#CCGCTAAAGCGAGCGA-1"
+2024-05-01 22:49:12 : Group C4._.Rep1 (7 of 40) : Processed Fragments Chr (1 of 24), 0.282 mins elapsed.
+
+2024-05-01 22:49:13 : Group C11._.Rep1 (21 of 40) : Creating Group Coverage File : C11._.Rep1.insertions.coverage.h5, 0.283 mins elapsed.
+2024-05-01 22:49:13 : Group C5._.Rep1 (9 of 40) : Processed Fragments Chr (1 of 24), 0.285 mins elapsed.
+
+2024-05-01 22:49:13 : 
+
+2024-05-01 22:49:13 : 
+
+2024-05-01 22:49:13 : 
+
+2024-05-01 22:49:13 : 
+
+2024-05-01 22:49:13 : Group C10._.Rep1 (19 of 40) : cellGroupi, Class = character
+
+2024-05-01 22:49:13 : Group C10._.Rep2 (20 of 40) : cellGroupi, Class = character
+
+2024-05-01 22:49:13 : Group C6._.Rep1 (11 of 40) : Processed Fragments Chr (1 of 24), 0.288 mins elapsed.
+
+2024-05-01 22:49:13 : 
+
+2024-05-01 22:49:13 : 
+
+2024-05-01 22:49:13 : 
+2024-05-01 22:49:13 : Group C5._.Rep2 (10 of 40) : Processed Fragments Chr (1 of 24), 0.288 mins elapsed.
+2024-05-01 22:49:13 : Group C6._.Rep2 (12 of 40) : Processed Fragments Chr (1 of 24), 0.288 mins elapsed.
+
+
+2024-05-01 22:49:13 : Group C11._.Rep1 (21 of 40) : cellGroupi, Class = character
+
+2024-05-01 22:49:13 : 
+
+
+Group C10._.Rep1 (19 of 40) : cellGroupi: length = 500
+
+2024-05-01 22:49:13 : 
+2024-05-01 22:49:13 : Group C7._.Rep1 (13 of 40) : Processed Fragments Chr (1 of 24), 0.29 mins elapsed.
+
+
+2024-05-01 22:49:13 : 
+Group C11._.Rep1 (21 of 40) : cellGroupi: length = 500
+
+2024-05-01 22:49:13 : 
+Group C10._.Rep2 (20 of 40) : cellGroupi: length = 40
+
+2024-05-01 22:49:13 : 
+[1] "pbmc_granulocyte_sorted_10k_atac#ATTGACTCATTAGCGC-1"
+2024-05-01 22:49:13 : Group C11._.Rep2 (22 of 40) : Creating Group Coverage File : C11._.Rep2.insertions.coverage.h5, 0.293 mins elapsed.
+[2] "pbmc_granulocyte_sorted_10k_atac#TTTAAGGTCCTTGTTG-1"2024-05-01 22:49:13 : Group C8._.Rep2 (16 of 40) : Processed Fragments Chr (1 of 24), 0.293 mins elapsed.
+
+
+2024-05-01 22:49:13 : 
+2024-05-01 22:49:13 : Group C12._.Rep1 (23 of 40) : Creating Group Coverage File : C12._.Rep1.insertions.coverage.h5, 0.294 mins elapsed.
+[3][1] "pbmc_granulocyte_sorted_10k_atac#GATCAAGAGGTGAAGC-1"
+[4]2024-05-01 22:49:13 : Group C8._.Rep1 (15 of 40) : Processed Fragments Chr (1 of 24), 0.294 mins elapsed.
+ "pbmc_granulocyte_sorted_10k_atac#TTTCCACCAATAGTCT-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#TCGGTAAGTCCTTAGT-1" "pbmc_granulocyte_sorted_10k_atac#TTGTCCGGTTGCTGGG-1"
+[6]
+ "pbmc_granulocyte_sorted_10k_atac#GCAGGTGAGGACTTAC-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#ATGTCATCATGCTTAG-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#CGGGCTTAGATAGACG-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#GAGTGTTTCATCCTAT-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#GCCTGACAGGAACACA-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#ATCGAGGCAAAGCGGC-1"
+[1] "pbmc_granulocyte_sorted_10k_atac#CTCATTAGTCATCAAG-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#CGCATTTGTTCCGGGA-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#AGATGAAGTCACTCGC-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#AAAGCCGCATAGCTTG-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#TCAGCGATCGGTAACT-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#GAGAAACGTGCTTTAC-1"
+
+2024-05-01 22:49:13 : Group C11._.Rep2 (22 of 40) : cellGroupi, Class = character
+
+2024-05-01 22:49:13 : 
+
+
+2024-05-01 22:49:14 : Group C12._.Rep1 (23 of 40) : cellGroupi, Class = character
+
+
+2024-05-01 22:49:14 : 
+
+2024-05-01 22:49:13 : Group C12._.Rep2 (24 of 40) : Creating Group Coverage File : C12._.Rep2.insertions.coverage.h5, 0.297 mins elapsed.
+
+2024-05-01 22:49:14 : 
+2024-05-01 22:49:14 : Group C7._.Rep2 (14 of 40) : Processed Fragments Chr (1 of 24), 0.3 mins elapsed.
+
+
+
+
+
+2024-05-01 22:49:14 : Group C13._.Rep1 (25 of 40) : Creating Group Coverage File : C13._.Rep1.insertions.coverage.h5, 0.299 mins elapsed.
+
+2024-05-01 22:49:14 : Group C12._.Rep2 (24 of 40) : cellGroupi, Class = character
+Group C11._.Rep2 (22 of 40) : cellGroupi: length = 40
+2024-05-01 22:49:14 : Group C13._.Rep2 (26 of 40) : Creating Group Coverage File : C13._.Rep2.insertions.coverage.h5, 0.302 mins elapsed.
+
+2024-05-01 22:49:14 : 
+Group C12._.Rep1 (23 of 40) : cellGroupi: length = 360
+[1]
+2024-05-01 22:49:14 : Group C13._.Rep1 (25 of 40) : cellGroupi, Class = character
+ "pbmc_granulocyte_sorted_10k_atac#TAAGTGCTCAAACACC-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#GCATTGCCACATACTG-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#TCTTGTCCAAAGGTAC-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#GTCATCCTCCGCAAGC-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#GGGCATTGTAGTTACG-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#CTCAATAAGTAACCCG-1"
+
+
+2024-05-01 22:49:14 : 
+
+2024-05-01 22:49:14 : 
+
+2024-05-01 22:49:14 : 
+
+2024-05-01 22:49:14 : 
+[1]
+2024-05-01 22:49:14 : Group C13._.Rep2 (26 of 40) : cellGroupi, Class = character
+ "pbmc_granulocyte_sorted_10k_atac#CCGCACACAACCCTAA-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#AAACCAACACTAAGAA-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#ATTGCTCGTAATCGCA-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#AACGACAAGCCGGTAC-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#AAACAGCCAAGGAATC-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#GGATTGCGTTGCAATG-1"
+
+
+Group C12._.Rep2 (24 of 40) : cellGroupi: length = 40
+2024-05-01 22:49:14 : Group C14._.Rep1 (27 of 40) : Creating Group Coverage File : C14._.Rep1.insertions.coverage.h5, 0.306 mins elapsed.
+
+2024-05-01 22:49:14 : 
+
+2024-05-01 22:49:14 : Group C15._.Rep1 (29 of 40) : Creating Group Coverage File : C15._.Rep1.insertions.coverage.h5, 0.311 mins elapsed.
+Group C13._.Rep1 (25 of 40) : cellGroupi: length = 416
+
+2024-05-01 22:49:14 : 
+
+
+[1]2024-05-01 22:49:14 : Group C15._.Rep2 (30 of 40) : Creating Group Coverage File : C15._.Rep2.insertions.coverage.h5, 0.313 mins elapsed.
+
+2024-05-01 22:49:15 : Group C14._.Rep1 (27 of 40) : cellGroupi, Class = character
+
+2024-05-01 22:49:15 : 
+2024-05-01 22:49:14 : Group C14._.Rep2 (28 of 40) : Creating Group Coverage File : C14._.Rep2.insertions.coverage.h5, 0.31 mins elapsed.
+ "pbmc_granulocyte_sorted_10k_atac#ATGACTCAGTGAGCGG-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#CGGGACAAGCTAAAGG-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#CGTGAGGAGCTAAGTC-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#GCTTCGCGTCAAGACC-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#TGCGATTAGCTTACTT-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#GTAGTTATCGCTAAAC-1"
+
+2024-05-01 22:49:15 : 
+Group C13._.Rep2 (26 of 40) : cellGroupi: length = 40
+
+2024-05-01 22:49:15 : 
+
+2024-05-01 22:49:15 : 
+[1]
+2024-05-01 22:49:15 : Group C15._.Rep1 (29 of 40) : cellGroupi, Class = character
+
+2024-05-01 22:49:15 : 
+
+
+2024-05-01 22:49:15 : Group C16._.Rep1 (31 of 40) : Creating Group Coverage File : C16._.Rep1.insertions.coverage.h5, 0.316 mins elapsed.
+
+2024-05-01 22:49:15 : Group C15._.Rep2 (30 of 40) : cellGroupi, Class = character
+
+ "pbmc_granulocyte_sorted_10k_atac#CTGGATGTCATAACTG-1"
+
+2024-05-01 22:49:15 : 
+
+2024-05-01 22:49:15 : 
+
+2024-05-01 22:49:15 : Group C14._.Rep2 (28 of 40) : cellGroupi, Class = character
+[2][1]
+2024-05-01 22:49:15 : 
+ "pbmc_granulocyte_sorted_10k_atac#CTATGTTTCAAGGACA-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#AGACAATAGGATCACT-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#CAGGTTTAGCTTAGTA-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#GCGCGATTCACGCATG-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#AACCTCACAGTATGTT-1"
+ "pbmc_granulocyte_sorted_10k_atac#CAAGTGAAGATGGACA-1"
+2024-05-01 22:49:15 : 
+
+
+Group C14._.Rep1 (27 of 40) : cellGroupi: length = 86
+
+2024-05-01 22:49:15 : Group C16._.Rep1 (31 of 40) : cellGroupi, Class = character
+
+
+2024-05-01 22:49:15 : 
+
+[2]
+ "pbmc_granulocyte_sorted_10k_atac#AAGGATTAGGAGGGTT-1"
+[3]
+2024-05-01 22:49:15 : 
+ "pbmc_granulocyte_sorted_10k_atac#TTAATCGAGCGATAAG-1"
+
+[4]
+2024-05-01 22:49:15 : 
+ "pbmc_granulocyte_sorted_10k_atac#CGATTCCTCTTGTCTG-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#CCTTACTCACTAGGTC-1"
+2024-05-01 22:49:15 : 
+
+2024-05-01 22:49:15 : 
+
+2024-05-01 22:49:15 : 
+
+[1][6]
+2024-05-01 22:49:15 : 
+ "pbmc_granulocyte_sorted_10k_atac#ATCCTGACAGTAAAGC-1"
+ "pbmc_granulocyte_sorted_10k_atac#ATGAAGTAGTAACCAC-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#AGTGTTTCAGCACCAT-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#GGTCAAGCACATAGCC-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#CTATGAGGTGCATTAG-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#GAGGGAGCAAACCTTG-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#TGGTGCATCAAGCCTG-1"
+Group C15._.Rep2 (30 of 40) : cellGroupi: length = 40
+Group C15._.Rep1 (29 of 40) : cellGroupi: length = 60
+
+2024-05-01 22:49:15 : 
+
+
+2024-05-01 22:49:16 : 
+
+
+[1]
+ "pbmc_granulocyte_sorted_10k_atac#GATGGCTGTCCTAAGA-1"
+[2]2024-05-01 22:49:15 : Group C9._.Rep1 (17 of 40) : Processed Fragments Chr (1 of 24), 0.33 mins elapsed.
+ "pbmc_granulocyte_sorted_10k_atac#TTAAAGGCACTGACCG-1"
+2024-05-01 22:49:16 : 
+
+[3] "pbmc_granulocyte_sorted_10k_atac#ATTCACTTCCTCATGC-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#ACTATGTCATTGGGAG-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#CATATCGCATCCAGGT-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#GGGTTTCCAAGACTCC-1"
+
+2024-05-01 22:49:16 : 
+Group C14._.Rep2 (28 of 40) : cellGroupi: length = 40
+[1]
+2024-05-01 22:49:16 : 
+ "pbmc_granulocyte_sorted_10k_atac#CATGCGCAGTCATGCG-1"Group C16._.Rep1 (31 of 40) : cellGroupi: length = 500
+
+
+2024-05-01 22:49:16 : 
+[2] "pbmc_granulocyte_sorted_10k_atac#TTTGCATTCCTTGTTG-1"2024-05-01 22:49:16 : Group C9._.Rep2 (18 of 40) : Processed Fragments Chr (1 of 24), 0.336 mins elapsed.
+
+[3] "pbmc_granulocyte_sorted_10k_atac#TCTCGCCCAGAACCGA-1"
+
+
+
+2024-05-01 22:49:16 : 
+
+2024-05-01 22:49:16 : 
+
+[4] "pbmc_granulocyte_sorted_10k_atac#AAACCGGCACATTAAC-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#GATCAGTTCACACAGT-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#GAGGTTAAGTGCACGC-1"
+[1] "pbmc_granulocyte_sorted_10k_atac#CGCTTGCGTTGTGACA-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#TGTAAGCTCTTAGGAC-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#TCATGTTTCCTCACAC-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#AGCGGATAGCAAGGAC-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#CAAGTATGTGCTGTAA-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#GTACTAATCACTAGGT-1"
+
+2024-05-01 22:49:16 : 
+
+2024-05-01 22:49:16 : 
+
+[1]
+2024-05-01 22:49:16 : 
+
+2024-05-01 22:49:16 : 
+
+
+2024-05-01 22:49:16 : 
+
+2024-05-01 22:49:16 : 
+
+2024-05-01 22:49:16 : 
+
+ "pbmc_granulocyte_sorted_10k_atac#GTAGCTGTCGTGCTTC-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#TTCAGGTAGGCCAATT-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#CCCAGTTTCTTGGACG-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#GCTCAACCAGGACCTT-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#GGTAGGAGTATTGTGG-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#GGTCATTAGGCATGTT-1"
+
+
+2024-05-01 22:49:16 : 
+
+2024-05-01 22:49:16 : 
+
+2024-05-01 22:49:16 : 
+
+
+2024-05-01 22:49:16 : 
+
+2024-05-01 22:49:16 : 
+
+2024-05-01 22:49:16 : 
+
+2024-05-01 22:49:16 : 
+
+2024-05-01 22:49:16 : 
+
+2024-05-01 22:49:16 : Group C16._.Rep2 (32 of 40) : Creating Group Coverage File : C16._.Rep2.insertions.coverage.h5, 0.346 mins elapsed.
+
+2024-05-01 22:49:17 : 
+
+2024-05-01 22:49:17 : 
+
+2024-05-01 22:49:17 : 
+
+2024-05-01 22:49:17 : 
+
+2024-05-01 22:49:17 : 
+2024-05-01 22:49:17 : Group C10._.Rep2 (20 of 40) : Processed Fragments Chr (1 of 24), 0.349 mins elapsed.
+
+2024-05-01 22:49:17 : 
+
+2024-05-01 22:49:17 : 
+
+
+2024-05-01 22:49:17 : 
+
+2024-05-01 22:49:17 : 
+
+2024-05-01 22:49:17 : 
+
+2024-05-01 22:49:17 : 
+
+2024-05-01 22:49:17 : 
+
+2024-05-01 22:49:17 : Group C16._.Rep2 (32 of 40) : cellGroupi, Class = character
+2024-05-01 22:49:17 : Group C11._.Rep1 (21 of 40) : Processed Fragments Chr (1 of 24), 0.354 mins elapsed.
+
+2024-05-01 22:49:17 : 
+
+2024-05-01 22:49:17 : 
+
+2024-05-01 22:49:17 : 
+
+2024-05-01 22:49:17 : 
+
+2024-05-01 22:49:17 : 
+2024-05-01 22:49:17 : Group C10._.Rep1 (19 of 40) : Processed Fragments Chr (1 of 24), 0.353 mins elapsed.
+
+2024-05-01 22:49:17 : 
+2024-05-01 22:49:17 : Group C11._.Rep2 (22 of 40) : Processed Fragments Chr (1 of 24), 0.356 mins elapsed.
+
+
+2024-05-01 22:49:17 : 
+
+2024-05-01 22:49:17 : 
+2024-05-01 22:49:17 : Group C17._.Rep1 (33 of 40) : Creating Group Coverage File : C17._.Rep1.insertions.coverage.h5, 0.355 mins elapsed.
+
+2024-05-01 22:49:17 : 
+2024-05-01 22:49:17 : Group C17._.Rep2 (34 of 40) : Creating Group Coverage File : C17._.Rep2.insertions.coverage.h5, 0.358 mins elapsed.
+Group C16._.Rep2 (32 of 40) : cellGroupi: length = 40
+
+2024-05-01 22:49:17 : 
+[1]
+2024-05-01 22:49:17 : 
+ "pbmc_granulocyte_sorted_10k_atac#TCCTCACAGGCCTGGT-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#GCATGAAAGCCACATG-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#AAGCGCTGTTATAGCG-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#GACTTGGTCGCCTAAG-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#GCTGGTTCAATTAAGG-1"
+[6]
+2024-05-01 22:49:17 : 
+ "pbmc_granulocyte_sorted_10k_atac#GGTTACTAGACAGGTA-1"
+
+2024-05-01 22:49:17 : 
+
+2024-05-01 22:49:17 : 
+2024-05-01 22:49:17 : Group C18._.Rep1 (35 of 40) : Creating Group Coverage File : C18._.Rep1.insertions.coverage.h5, 0.361 mins elapsed.
+
+2024-05-01 22:49:17 : Group C17._.Rep1 (33 of 40) : cellGroupi, Class = character
+
+2024-05-01 22:49:17 : 
+
+2024-05-01 22:49:17 : Group C17._.Rep2 (34 of 40) : cellGroupi, Class = character
+
+2024-05-01 22:49:17 : 
+2024-05-01 22:49:17 : Group C12._.Rep1 (23 of 40) : Processed Fragments Chr (1 of 24), 0.363 mins elapsed.
+
+2024-05-01 22:49:17 : 
+
+2024-05-01 22:49:17 : 
+
+
+2024-05-01 22:49:17 : 
+
+2024-05-01 22:49:17 : 
+
+
+2024-05-01 22:49:17 : Group C18._.Rep1 (35 of 40) : cellGroupi, Class = character
+2024-05-01 22:49:17 : Group C18._.Rep2 (36 of 40) : Creating Group Coverage File : C18._.Rep2.insertions.coverage.h5, 0.364 mins elapsed.
+
+2024-05-01 22:49:18 : 
+
+
+2024-05-01 22:49:18 : 
+
+2024-05-01 22:49:17 : Group C19._.Rep1 (37 of 40) : Creating Group Coverage File : C19._.Rep1.insertions.coverage.h5, 0.365 mins elapsed.
+
+2024-05-01 22:49:18 : 
+
+2024-05-01 22:49:18 : 
+Group C17._.Rep1 (33 of 40) : cellGroupi: length = 74
+
+2024-05-01 22:49:18 : 
+
+Group C17._.Rep2 (34 of 40) : cellGroupi: length = 40
+
+2024-05-01 22:49:18 : Group C18._.Rep2 (36 of 40) : cellGroupi, Class = character
+
+2024-05-01 22:49:18 : 
+
+2024-05-01 22:49:18 : 
+
+2024-05-01 22:49:18 : 
+[1]
+2024-05-01 22:49:18 : Group C19._.Rep1 (37 of 40) : cellGroupi, Class = character
+ "pbmc_granulocyte_sorted_10k_atac#GCAGCAACAAGCGATG-1"[1]Group C18._.Rep1 (35 of 40) : cellGroupi: length = 145
+
+ "pbmc_granulocyte_sorted_10k_atac#TGAAGCAAGGCGAATA-1"
+2024-05-01 22:49:18 : Group C12._.Rep2 (24 of 40) : Processed Fragments Chr (1 of 24), 0.372 mins elapsed.
+[2][2]
+ "pbmc_granulocyte_sorted_10k_atac#CCAACATAGTTATCTC-1" "pbmc_granulocyte_sorted_10k_atac#ATTACTGAGCTGAGGG-1"
+[3]
+2024-05-01 22:49:18 : 
+ "pbmc_granulocyte_sorted_10k_atac#GTGCGCAGTGCATTAG-1"
+2024-05-01 22:49:18 : 
+
+
+2024-05-01 22:49:18 : 
+[4] "pbmc_granulocyte_sorted_10k_atac#GAAGGAACAACCGCCA-1"
+
+[5] "pbmc_granulocyte_sorted_10k_atac#AGCATCCCAATAACCT-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#TGACTTCGTAGCTAAT-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#CCATAAGGTAACGTGC-1"
+2024-05-01 22:49:18 : 
+
+[4] "pbmc_granulocyte_sorted_10k_atac#CTCTAAGCAGTTTACG-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#CCCAGTTTCCTTCTAG-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#GTGTTCCTCAGTGAAG-1"
+
+2024-05-01 22:49:18 : 
+2024-05-01 22:49:18 : Group C14._.Rep1 (27 of 40) : Processed Fragments Chr (1 of 24), 0.373 mins elapsed.
+
+2024-05-01 22:49:18 : 
+
+Group C18._.Rep2 (36 of 40) : cellGroupi: length = 40
+[1]
+ "pbmc_granulocyte_sorted_10k_atac#GTTAAGTGTCACTCGC-1"
+[2]
+ "pbmc_granulocyte_sorted_10k_atac#TTATTGCTCATTACGA-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#AACCGCTCATGTCAGC-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#CGTAGCGGTTTACGTC-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#CGCTCAGCAGCATGAG-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#AGGCTAAAGTCATGCG-1"
+2024-05-01 22:49:18 : Group C13._.Rep1 (25 of 40) : Processed Fragments Chr (1 of 24), 0.376 mins elapsed.
+
+2024-05-01 22:49:18 : 
+Group C19._.Rep1 (37 of 40) : cellGroupi: length = 284
+
+2024-05-01 22:49:18 : 
+
+2024-05-01 22:49:18 : 
+
+2024-05-01 22:49:18 : 
+
+2024-05-01 22:49:18 : 
+[1]
+
+ "pbmc_granulocyte_sorted_10k_atac#GTACGTAGTGCATCGG-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#TAGCCGGGTTTAGCGA-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#CCTTGTTCAGTTTCTC-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#AGGCCCAGTACCCACC-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#AGGCAGGTCTCCATAT-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#AGCCTCCGTAGCTGGT-1"
+
+[1]
+2024-05-01 22:49:18 : 
+2024-05-01 22:49:18 : Group C19._.Rep2 (38 of 40) : Creating Group Coverage File : C19._.Rep2.insertions.coverage.h5, 0.377 mins elapsed.
+ "pbmc_granulocyte_sorted_10k_atac#GATGGACAGCCTAACG-1"
+2024-05-01 22:49:18 : 
+
+2024-05-01 22:49:18 : 
+
+2024-05-01 22:49:18 : Group C13._.Rep2 (26 of 40) : Processed Fragments Chr (1 of 24), 0.379 mins elapsed.
+[2] "pbmc_granulocyte_sorted_10k_atac#GAGTGATCAGCCAGAA-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#GACTAATGTAATCGTG-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#GACCTCAAGCAGGTTT-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#CGGTTTCTCCGGAACC-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#CCGGTTAAGTTGTCCC-1"
+
+2024-05-01 22:49:18 : Group C20._.Rep1 (39 of 40) : Creating Group Coverage File : C20._.Rep1.insertions.coverage.h5, 0.379 mins elapsed.
+
+2024-05-01 22:49:18 : 
+
+2024-05-01 22:49:18 : 
+
+2024-05-01 22:49:18 : 
+
+
+2024-05-01 22:49:18 : 
+
+
+2024-05-01 22:49:19 : Group C19._.Rep2 (38 of 40) : cellGroupi, Class = character
+2024-05-01 22:49:19 : Group C20._.Rep2 (40 of 40) : Creating Group Coverage File : C20._.Rep2.insertions.coverage.h5, 0.382 mins elapsed.
+2024-05-01 22:49:18 : Group C15._.Rep2 (30 of 40) : Processed Fragments Chr (1 of 24), 0.382 mins elapsed.
+2024-05-01 22:49:18 : Group C15._.Rep1 (29 of 40) : Processed Fragments Chr (1 of 24), 0.382 mins elapsed.
+
+2024-05-01 22:49:19 : Group C20._.Rep1 (39 of 40) : cellGroupi, Class = character
+
+
+
+2024-05-01 22:49:19 : 
+
+
+2024-05-01 22:49:19 : 
+
+2024-05-01 22:49:19 : Group C14._.Rep2 (28 of 40) : Processed Fragments Chr (1 of 24), 0.384 mins elapsed.
+
+2024-05-01 22:49:19 : Group C20._.Rep2 (40 of 40) : cellGroupi, Class = character
+Group C19._.Rep2 (38 of 40) : cellGroupi: length = 40
+Group C20._.Rep1 (39 of 40) : cellGroupi: length = 401
+
+2024-05-01 22:49:19 : 
+
+2024-05-01 22:49:19 : 
+
+2024-05-01 22:49:19 : 
+
+[1]
+2024-05-01 22:49:19 : 
+ "pbmc_granulocyte_sorted_10k_atac#TTTACGAAGTGAACGA-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#ATGTAAGCATGGCCTG-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#CATTGTAAGTAACCCG-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#TGTGGAGCAATGAAGC-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#GCGCGATTCCTCCCTC-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#CTAATTGAGGATGATG-1"
+
+2024-05-01 22:49:19 : 
+[1] "pbmc_granulocyte_sorted_10k_atac#AACCCGCAGGCGGATG-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#AAGCCACGTTTCAGGA-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#TTTCATCAGCGATACT-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#GGGTTTCCAGTAGGTG-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#TAAGGACCAACTAGAA-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#CCCTCACCACAATACT-1"
+
+2024-05-01 22:49:19 : 
+2024-05-01 22:49:19 : Group C16._.Rep1 (31 of 40) : Processed Fragments Chr (1 of 24), 0.39 mins elapsed.
+
+2024-05-01 22:49:19 : 
+
+2024-05-01 22:49:19 : 
+Group C20._.Rep2 (40 of 40) : cellGroupi: length = 40
+
+
+
+2024-05-01 22:49:19 : 
+
+2024-05-01 22:49:19 : 
+[1]
+ "pbmc_granulocyte_sorted_10k_atac#GTACACCCAAGTCGCT-1"
+[2] "pbmc_granulocyte_sorted_10k_atac#TGAGCCGGTTCGCGCT-1"
+[3] "pbmc_granulocyte_sorted_10k_atac#CTGTTGGAGGACTAAG-1"
+[4] "pbmc_granulocyte_sorted_10k_atac#CTCTTGATCAGGGCCT-1"
+[5] "pbmc_granulocyte_sorted_10k_atac#TCGGTTCTCCCGTTTA-1"
+[6] "pbmc_granulocyte_sorted_10k_atac#GTTGCCCGTTTCCTCC-1"
+
+2024-05-01 22:49:19 : 
+
+
+2024-05-01 22:49:19 : 
+
+2024-05-01 22:49:19 : 
+
+
+2024-05-01 22:49:19 : 
+
+2024-05-01 22:49:19 : 
+
+2024-05-01 22:49:19 : 
+
+2024-05-01 22:49:19 : 
+
+
+2024-05-01 22:49:19 : 
+
+2024-05-01 22:49:19 : 
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+2024-05-01 22:49:20 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (1 of 24), 0.403 mins elapsed.
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+2024-05-01 22:49:20 : Group C17._.Rep1 (33 of 40) : Processed Fragments Chr (1 of 24), 0.413 mins elapsed.
+
+2024-05-01 22:49:20 : 
+
+2024-05-01 22:49:20 : 
+2024-05-01 22:49:20 : Group C17._.Rep2 (34 of 40) : Processed Fragments Chr (1 of 24), 0.415 mins elapsed.
+
+2024-05-01 22:49:21 : 
+2024-05-01 22:49:20 : Group C18._.Rep1 (35 of 40) : Processed Fragments Chr (1 of 24), 0.415 mins elapsed.
+
+2024-05-01 22:49:21 : 
+2024-05-01 22:49:21 : Group C19._.Rep1 (37 of 40) : Processed Fragments Chr (1 of 24), 0.417 mins elapsed.
+
+2024-05-01 22:49:21 : 
+
+2024-05-01 22:49:21 : 
+2024-05-01 22:49:21 : Group C18._.Rep2 (36 of 40) : Processed Fragments Chr (1 of 24), 0.419 mins elapsed.
+
+2024-05-01 22:49:21 : 
+
+2024-05-01 22:49:21 : 
+
+2024-05-01 22:49:21 : 
+
+2024-05-01 22:49:21 : 
+
+2024-05-01 22:49:21 : 
+
+2024-05-01 22:49:21 : 
+2024-05-01 22:49:21 : Group C19._.Rep2 (38 of 40) : Processed Fragments Chr (1 of 24), 0.427 mins elapsed.
+
+2024-05-01 22:49:21 : 
+2024-05-01 22:49:21 : Group C20._.Rep1 (39 of 40) : Processed Fragments Chr (1 of 24), 0.428 mins elapsed.
+
+2024-05-01 22:49:21 : 
+2024-05-01 22:49:21 : Group C20._.Rep2 (40 of 40) : Processed Fragments Chr (1 of 24), 0.43 mins elapsed.
+2024-05-01 22:49:28 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (2 of 24), 0.543 mins elapsed.
+2024-05-01 22:49:35 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (3 of 24), 0.663 mins elapsed.
+2024-05-01 22:49:42 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (4 of 24), 0.781 mins elapsed.
+2024-05-01 22:49:50 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (5 of 24), 0.902 mins elapsed.
+2024-05-01 22:49:56 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (6 of 24), 1 mins elapsed.
+2024-05-01 22:50:01 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (7 of 24), 1.09 mins elapsed.
+2024-05-01 22:50:07 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (8 of 24), 1.192 mins elapsed.
+2024-05-01 22:50:14 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (9 of 24), 1.3 mins elapsed.
+2024-05-01 22:50:21 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (10 of 24), 1.419 mins elapsed.
+2024-05-01 22:50:25 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (11 of 24), 1.494 mins elapsed.
+2024-05-01 22:50:30 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (12 of 24), 1.58 mins elapsed.
+2024-05-01 22:50:36 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (13 of 24), 1.682 mins elapsed.
+2024-05-01 22:50:42 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (14 of 24), 1.769 mins elapsed.
+2024-05-01 22:50:48 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (15 of 24), 1.867 mins elapsed.
+2024-05-01 22:50:52 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (16 of 24), 1.948 mins elapsed.
+2024-05-01 22:50:59 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (17 of 24), 2.058 mins elapsed.
+2024-05-01 22:51:05 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (18 of 24), 2.165 mins elapsed.
+2024-05-01 22:51:11 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (19 of 24), 2.251 mins elapsed.
+2024-05-01 22:51:16 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (20 of 24), 2.34 mins elapsed.
+2024-05-01 22:51:22 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (21 of 24), 2.443 mins elapsed.
+2024-05-01 22:51:27 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (22 of 24), 2.525 mins elapsed.
+2024-05-01 22:51:33 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (23 of 24), 2.628 mins elapsed.
+2024-05-01 22:51:39 : Group C16._.Rep2 (32 of 40) : Processed Fragments Chr (24 of 24), 2.729 mins elapsed.

@@ -1,0 +1,7 @@
+#1. sort the bed file 
+sort-bed /project/scATAC_analysis/scATAcat_review/data/Buenrostro2018_FACS_BM_scATAC/scATAC/03_input_for_EpiAnno/redo/proj3_peak_regions.csv > /project/scATAC_analysis/scATAcat_review/data/Buenrostro2018_FACS_BM_scATAC/scATAC/03_input_for_EpiAnno/redo/Buenrostro2018_FACS_BM_scATAC_peak_regions_sorted.bed
+
+
+# get the coverage
+
+bedtools map -a  /project/scATAC_analysis/scATAcat_review/data/Buenrostro2018_FACS_BM_scATAC/scATAC/03_input_for_EpiAnno/redo/Buenrostro2018_FACS_BM_scATAC_peak_regions_sorted.bed -b /project/scATAC_analysis/scATAcat_review/benchmarking/Cellcano/apply_BM/train_GSM3722071_Bone_Marrow_Rep1/GSM3722071_Bone_Marrow_Rep1_lftOverhg38_fragments_sorted.tsv -c 4,5 -o collapse > /project/scATAC_analysis/scATAcat_review/data/Satpathy2019/Bone_Marrow_Rep1/04_preprocessing_for_EpiAnno/Buenrostro2018_FACS_BM_unified_peak_matrix/redo/GSM3722071_Bone_Marrow_Rep1_liftOverhg38_Buenrostro2018_FACS_BM_unified_mapping.bed

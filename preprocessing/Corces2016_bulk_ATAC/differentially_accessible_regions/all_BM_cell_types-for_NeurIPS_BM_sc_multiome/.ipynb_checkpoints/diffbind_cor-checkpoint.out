@@ -1,0 +1,167 @@
+               _                           
+platform       x86_64-pc-linux-gnu         
+arch           x86_64                      
+os             linux-gnu                   
+system         x86_64, linux-gnu           
+status                                     
+major          4                           
+minor          0.5                         
+year           2021                        
+month          03                          
+day            31                          
+svn rev        80133                       
+language       R                           
+version.string R version 4.0.5 (2021-03-31)
+nickname       Shake and Throw             
+    SampleID   Tissue Condition donorID Treatment
+1    Bcell_1    Bcell     Bcell    1022   control
+2    Bcell_2    Bcell     Bcell    4983   control
+3    Bcell_3    Bcell     Bcell    5483   control
+4    Bcell_4    Bcell     Bcell    5483   control
+5 CD4Tcell_1 CD4Tcell  CD4Tcell    1022   control
+6 CD4Tcell_2 CD4Tcell  CD4Tcell    2596   control
+                                                                                                                                                                                                                                                                    bamReads
+1    /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/GSE74912_Corces2016_ENCODE_v3_processed/Bcell/atac/c3305399-347a-4f14-871d-696a4b7bd760/call-filter/shard-0/execution/SRR2920492_1.fastq.trim.srt.nodup.no_chrM_MT.bam
+2    /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/GSE74912_Corces2016_ENCODE_v3_processed/Bcell/atac/c3305399-347a-4f14-871d-696a4b7bd760/call-filter/shard-1/execution/SRR2920513_1.fastq.trim.srt.nodup.no_chrM_MT.bam
+3    /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/GSE74912_Corces2016_ENCODE_v3_processed/Bcell/atac/c3305399-347a-4f14-871d-696a4b7bd760/call-filter/shard-2/execution/SRR2920517_1.fastq.trim.srt.nodup.no_chrM_MT.bam
+4    /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/GSE74912_Corces2016_ENCODE_v3_processed/Bcell/atac/c3305399-347a-4f14-871d-696a4b7bd760/call-filter/shard-3/execution/SRR2920544_1.fastq.trim.srt.nodup.no_chrM_MT.bam
+5 /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/GSE74912_Corces2016_ENCODE_v3_processed/CD4Tcell/atac/aaead0dc-374c-4a33-b443-e7bd45c3b3b6/call-filter/shard-0/execution/SRR2920493_1.fastq.trim.srt.nodup.no_chrM_MT.bam
+6 /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/GSE74912_Corces2016_ENCODE_v3_processed/CD4Tcell/atac/aaead0dc-374c-4a33-b443-e7bd45c3b3b6/call-filter/shard-1/execution/SRR2920496_1.fastq.trim.srt.nodup.no_chrM_MT.bam
+  Replicate ControlID
+1         1     Bcell
+2         2     Bcell
+3         3     Bcell
+4         4     Bcell
+5         1  CD4Tcell
+6         2  CD4Tcell
+                                                                                                                                                                                             Peaks
+1    /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/ENCODE_cCRE_coverage/Bcell/SRR2920492_NOTmerged_scATAC_overlap_ENCODE_cCRE_coverage_6col.bed
+2    /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/ENCODE_cCRE_coverage/Bcell/SRR2920513_NOTmerged_scATAC_overlap_ENCODE_cCRE_coverage_6col.bed
+3    /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/ENCODE_cCRE_coverage/Bcell/SRR2920517_NOTmerged_scATAC_overlap_ENCODE_cCRE_coverage_6col.bed
+4    /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/ENCODE_cCRE_coverage/Bcell/SRR2920544_NOTmerged_scATAC_overlap_ENCODE_cCRE_coverage_6col.bed
+5 /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/ENCODE_cCRE_coverage/CD4Tcell/SRR2920493_NOTmerged_scATAC_overlap_ENCODE_cCRE_coverage_6col.bed
+6 /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/ENCODE_cCRE_coverage/CD4Tcell/SRR2920496_NOTmerged_scATAC_overlap_ENCODE_cCRE_coverage_6col.bed
+  PeakCaller      SRRID
+1        bed SRR2920492
+2        bed SRR2920513
+3        bed SRR2920517
+4        bed SRR2920544
+5        bed SRR2920493
+6        bed SRR2920496
+   SampleID Tissue Condition donorID Treatment
+75    ERY_3    ERY       ERY    2596   control
+76    ERY_4    ERY       ERY    5483   control
+77    ERY_5    ERY       ERY    5483   control
+78    ERY_6    ERY       ERY    5483   control
+79    ERY_7    ERY       ERY    6926   control
+80    ERY_8    ERY       ERY    6926   control
+                                                                                                                                                                                                                                                                bamReads
+75 /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/GSE74912_Corces2016_ENCODE_v3_processed/Ery/atac/30c40953-158a-4029-83dd-b3902a172e43/call-filter/shard-2/execution/SRR2920504_1.fastq.trim.srt.nodup.no_chrM_MT.bam
+76 /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/GSE74912_Corces2016_ENCODE_v3_processed/Ery/atac/30c40953-158a-4029-83dd-b3902a172e43/call-filter/shard-3/execution/SRR2920523_1.fastq.trim.srt.nodup.no_chrM_MT.bam
+77 /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/GSE74912_Corces2016_ENCODE_v3_processed/Ery/atac/30c40953-158a-4029-83dd-b3902a172e43/call-filter/shard-4/execution/SRR2920524_1.fastq.trim.srt.nodup.no_chrM_MT.bam
+78 /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/GSE74912_Corces2016_ENCODE_v3_processed/Ery/atac/30c40953-158a-4029-83dd-b3902a172e43/call-filter/shard-5/execution/SRR2920525_1.fastq.trim.srt.nodup.no_chrM_MT.bam
+79 /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/GSE74912_Corces2016_ENCODE_v3_processed/Ery/atac/30c40953-158a-4029-83dd-b3902a172e43/call-filter/shard-6/execution/SRR2920529_1.fastq.trim.srt.nodup.no_chrM_MT.bam
+80 /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/GSE74912_Corces2016_ENCODE_v3_processed/Ery/atac/30c40953-158a-4029-83dd-b3902a172e43/call-filter/shard-7/execution/SRR2920530_1.fastq.trim.srt.nodup.no_chrM_MT.bam
+   Replicate ControlID
+75         3       ERY
+76         4       ERY
+77         5       ERY
+78         6       ERY
+79         7       ERY
+80         8       ERY
+                                                                                                                                                                                         Peaks
+75 /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/ENCODE_cCRE_coverage/Ery/SRR2920504_NOTmerged_scATAC_overlap_ENCODE_cCRE_coverage_6col.bed
+76 /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/ENCODE_cCRE_coverage/Ery/SRR2920523_NOTmerged_scATAC_overlap_ENCODE_cCRE_coverage_6col.bed
+77 /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/ENCODE_cCRE_coverage/Ery/SRR2920524_NOTmerged_scATAC_overlap_ENCODE_cCRE_coverage_6col.bed
+78 /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/ENCODE_cCRE_coverage/Ery/SRR2920525_NOTmerged_scATAC_overlap_ENCODE_cCRE_coverage_6col.bed
+79 /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/ENCODE_cCRE_coverage/Ery/SRR2920529_NOTmerged_scATAC_overlap_ENCODE_cCRE_coverage_6col.bed
+80 /project/scATAC_analysis/10X_PBMC_analysis/AnnotationQuestion/bulk_ATAC_data/GSE74912_Corces2016/ENCODE_cCRE_coverage/Ery/SRR2920530_NOTmerged_scATAC_overlap_ENCODE_cCRE_coverage_6col.bed
+   PeakCaller      SRRID
+75        bed SRR2920504
+76        bed SRR2920523
+77        bed SRR2920524
+78        bed SRR2920525
+79        bed SRR2920529
+80        bed SRR2920530
+80 Samples, 926535 sites in matrix:
+           ID   Tissue Condition Treatment Replicate
+1     Bcell_1    Bcell     Bcell   control         1
+2     Bcell_2    Bcell     Bcell   control         2
+3     Bcell_3    Bcell     Bcell   control         3
+4     Bcell_4    Bcell     Bcell   control         4
+5  CD4Tcell_1 CD4Tcell  CD4Tcell   control         1
+6  CD4Tcell_2 CD4Tcell  CD4Tcell   control         2
+7  CD4Tcell_3 CD4Tcell  CD4Tcell   control         3
+8  CD4Tcell_4 CD4Tcell  CD4Tcell   control         4
+9  CD4Tcell_5 CD4Tcell  CD4Tcell   control         5
+10 CD8Tcell_1 CD8Tcell  CD8Tcell   control         1
+11 CD8Tcell_2 CD8Tcell  CD8Tcell   control         2
+12 CD8Tcell_3 CD8Tcell  CD8Tcell   control         3
+13 CD8Tcell_4 CD8Tcell  CD8Tcell   control         4
+14 CD8Tcell_5 CD8Tcell  CD8Tcell   control         5
+15     Mono_1     Mono      Mono   control         1
+16     Mono_2     Mono      Mono   control         2
+17     Mono_3     Mono      Mono   control         3
+18     Mono_4     Mono      Mono   control         4
+19     Mono_5     Mono      Mono   control         5
+20     Mono_6     Mono      Mono   control         6
+21   NKcell_1   NKcell    NKcell   control         1
+22   NKcell_2   NKcell    NKcell   control         2
+23   NKcell_3   NKcell    NKcell   control         3
+24   NKcell_4   NKcell    NKcell   control         4
+25   NKcell_5   NKcell    NKcell   control         5
+26   NKcell_6   NKcell    NKcell   control         6
+27      pDC_1      pDC       pDC   control         1
+28      pDC_2      pDC       pDC   control         2
+29      pDC_3      pDC       pDC   control         3
+30      CLP_1      CLP       CLP   control         1
+31      CLP_2      CLP       CLP   control         2
+32      CLP_3      CLP       CLP   control         3
+33      CLP_4      CLP       CLP   control         4
+34      CLP_5      CLP       CLP   control         5
+35      CMP_1      CMP       CMP   control         1
+36      CMP_2      CMP       CMP   control         2
+37      CMP_3      CMP       CMP   control         3
+38      CMP_4      CMP       CMP   control         4
+39      CMP_5      CMP       CMP   control         5
+40      CMP_6      CMP       CMP   control         6
+41      CMP_7      CMP       CMP   control         7
+42      CMP_8      CMP       CMP   control         8
+43      GMP_1      GMP       GMP   control         1
+44      GMP_2      GMP       GMP   control         2
+45      GMP_3      GMP       GMP   control         3
+46      GMP_4      GMP       GMP   control         4
+47      GMP_5      GMP       GMP   control         5
+48      GMP_6      GMP       GMP   control         6
+49      GMP_7      GMP       GMP   control         7
+50      HSC_1      HSC       HSC   control         1
+51      HSC_2      HSC       HSC   control         2
+52      HSC_3      HSC       HSC   control         3
+53      HSC_4      HSC       HSC   control         4
+54      HSC_5      HSC       HSC   control         5
+55      HSC_6      HSC       HSC   control         6
+56      HSC_7      HSC       HSC   control         7
+57     LMPP_1     LMPP      LMPP   control         1
+58     LMPP_2     LMPP      LMPP   control         2
+59     LMPP_3     LMPP      LMPP   control         3
+60      MEP_1      MEP       MEP   control         1
+61      MEP_2      MEP       MEP   control         2
+62      MEP_3      MEP       MEP   control         3
+63      MEP_4      MEP       MEP   control         4
+64      MEP_5      MEP       MEP   control         5
+65      MEP_6      MEP       MEP   control         6
+66      MEP_7      MEP       MEP   control         7
+67      MPP_1      MPP       MPP   control         1
+68      MPP_2      MPP       MPP   control         2
+69      MPP_3      MPP       MPP   control         3
+70      MPP_4      MPP       MPP   control         4
+71      MPP_5      MPP       MPP   control         5
+72      MPP_6      MPP       MPP   control         6
+73      ERY_1      ERY       ERY   control         1
+74      ERY_2      ERY       ERY   control         2
+75      ERY_3      ERY       ERY   control         3
+76      ERY_4      ERY       ERY   control         4
+77      ERY_5      ERY       ERY   control         5
+78      ERY_6      ERY       ERY   control         6
+79      ERY_7      ERY       ERY   control         7
+80      ERY_8      ERY       ERY   control         8

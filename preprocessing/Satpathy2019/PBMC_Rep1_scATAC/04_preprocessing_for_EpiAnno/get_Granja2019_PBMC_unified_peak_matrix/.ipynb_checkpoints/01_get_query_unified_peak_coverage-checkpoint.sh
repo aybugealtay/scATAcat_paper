@@ -1,0 +1,4 @@
+# get the coverage
+
+bedtools map -a  /project/scATAC_analysis/scATAcat_review/data/Granja2019/PBMC_D10T1/05_peaks_and_genesScore_matrix_ArchR/input_for_EpiAnno/Granja2019_PBMC_D10T1_scATAC_peak_regions_sorted.bed -b /project/scATAC_analysis/scATAcat_review/benchmarking/Cellcano/apply_PBMC/train_data_GSM3722015_PBMC_Rep1/GSM3722015_PBMC_Rep1_liftOverhg38_sorted_fragments.tsv.gz -c 4,5 -o collapse > /project/scATAC_analysis/scATAcat_review/data/Satpathy2019/PBMC_Rep1_scATAC/04_preprocessing_for_EpiAnno/Granja2019_PBMC_unified_peak_matrix/GSM3722015_PBMC_Rep1_liftOverhg38_Granja2019_PBMC_unified_mapping.bed
+

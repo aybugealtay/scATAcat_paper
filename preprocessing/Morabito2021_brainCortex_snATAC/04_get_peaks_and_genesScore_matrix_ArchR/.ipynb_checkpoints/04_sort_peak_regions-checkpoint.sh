@@ -1,0 +1,1 @@
+sort-bed /project/scATAC_analysis/scATAcat_review/data/Granja2019/BMMC_D6T1/05_peaks_and_genesScore_matrix_ArchR/input_for_EpiAnno/peak_regions.tsv > /project/scATAC_analysis/scATAcat_review/data/Granja2019/BMMC_D6T1/05_peaks_and_genesScore_matrix_ArchR/input_for_EpiAnno/Granja2019_BMMC_D6T1_scATAC_peak_regions_sorted.bed

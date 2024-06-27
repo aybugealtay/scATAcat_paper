@@ -1,0 +1,1 @@
+mxqsub -N BM_rep1_matrix --tmpdir 501G --stdout=./BM_rep1_matrix_out --stderr=./BM__rep1_matrix_err --threads=10 --memory=500G --runtime=6h bash /project/scATAC_analysis/scATAcat_review/preprocessing/Satpathy2019/Bone_Marrow_Rep1_scATAC/04_preprocessing_for_EpiAnno/get_NeurIPS_BM_unified_peak_matrix/02_create_NeurIPS_BM_peaks_per_cell_matrix_job.sh

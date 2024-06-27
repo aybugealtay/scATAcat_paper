@@ -1,0 +1,23 @@
+# train Cellcano model
+conda activate Cellcano5
+
+> Cellcano train -i /project/scATAC_analysis/scATAcat_review/data/Zhu2023_brain_scmultiome/01_preprocessing_for_Cellcano/ArchR_gene_score_filtered/ArchR_genescore \
+	-m /project/scATAC_analysis/scATAcat_review/data/Zhu2023_brain_scmultiome/metadata/Zhu2023_brainCortex_adult1_metadata.csv \
+	-o /project/scATAC_analysis/scATAcat_review/results/Fig8-Zhu2023_brain_scmultiome/Cellcano_trained_model \
+	--prefix Zhu2023_brain_trained 
+### test on Neurips BM ##
+> Cellcano preprocess -i test_data_NeurIPS2021 -o test_data_NeurIPS2021 -g hg38 --threads 10
+
+#
+
+scATAC_analysis/scATAcat_review/data/Zhu2023_brain_scmultiome/01_preprocessing_for_Cellcano/ArchR_gene_score_filtered/ArchR_genescore_barcodes.tsv
+
+
+outpath : scATAC_analysis/scATAcat_review/results/Fig8-Zhu2023_brain_scmultiome/Cellcano_trained_model
+
+
+
+    train_parser.add_argument('-m', '--metadata', dest='metadata', 
+            type=str, 
+            help="The annotation dataframe with row as barcodes or cell ID and columns as celltype. Notice: please make sure that your cell type indicator be 'celltype'.")
+           help="The annotation dataframe with row as barcodes or cell ID and columns as celltype. Notice: please make sure that your cell type indicator be 'celltype'.")

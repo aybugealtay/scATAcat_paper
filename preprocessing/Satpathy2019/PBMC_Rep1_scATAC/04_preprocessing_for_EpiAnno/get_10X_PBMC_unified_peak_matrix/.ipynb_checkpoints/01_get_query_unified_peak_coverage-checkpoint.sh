@@ -1,0 +1,4 @@
+# get the coverage
+
+bedtools map -a  /project/scATAC_analysis/scATAcat_review/data/10X_PBMC_scmultiome/04_input_for_EpiAnno/get_unified_peak_coverage/PBMC_10X_proj3_peak_regions_sorted.bed -b /project/scATAC_analysis/scATAcat_review/benchmarking/Cellcano/apply_PBMC/train_data_GSM3722015_PBMC_Rep1/GSM3722015_PBMC_Rep1_liftOverhg38_sorted_fragments.tsv.gz -c 4,5 -o collapse > /project/scATAC_analysis/scATAcat_review/data/Satpathy2019/PBMC_Rep1_scATAC/04_preprocessing_for_EpiAnno/10XPBMC_unified_peak_matrix/GSM3722015_PBMC_Rep1_liftOverhg38_PBMC_10X_unified_mapping.bed
+

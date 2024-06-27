@@ -1,0 +1,1 @@
+mxqsub --stdout=pipeline_04.stdout.log --stderr=pipeline_04.stderr.log --group-name=pipeline_04 --threads=10 --memory=800G -t 360m python3.9 04_create_ENCODE_cov_per_cell_matrix.py
