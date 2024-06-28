@@ -1,5 +1,7 @@
 ### Code for the scATAcat Manuscript
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12583103.svg)](https://doi.org/10.5281/zenodo.12583103)
+
 This repository contains all the code necessary to reproduce the figures and analyses presented in the scATAcat Manuscript. Below is a brief overview of the repository structure:
 
 
@@ -26,9 +28,8 @@ This repository contains all the code necessary to reproduce the figures and ana
 - **Data**
     - Placeholder for the data folder. The content of this file can be access from Zenado repository
  
- Please refer to the Zenodo repository for files exceeding GitHub's file size limit.
 
 #### Citation
 
 If you use the code or data from this repository in your research, please cite our manuscript:
-Altay, Aybuge, and Martin Vingron. "scATAcat: Cell-type annotation for scATAC-seq data." bioRxiv (2024): 2024-01.
+ Altay, Aybuge, and Martin Vingron. "scATAcat: Cell-type annotation for scATAC-seq data." bioRxiv (2024): 2024-01.
