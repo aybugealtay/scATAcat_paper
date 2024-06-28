@@ -1,8 +1,0 @@
-00_fastqs
-
-  Cellranger ATAC v2.1.0
-  Reference Dataset Version 2.1.0
-  Reference Data Path ($CR_REFS): /project/genomes/10xgenomics/refdata-cellranger/2.1.0
-
-Martian Runtime - v4.0.7
-Running preflight checks (please wait)...

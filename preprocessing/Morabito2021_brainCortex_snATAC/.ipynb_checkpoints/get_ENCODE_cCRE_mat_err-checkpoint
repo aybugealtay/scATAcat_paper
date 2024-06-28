@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/project/scATAC_analysis/scATAcat_review/preprocessing/Morabito2021_brainCortex_snATAC/02a_get_ENCODE_cCRE_coverage_by_cell_matrix.py", line 20, in <module>
-    ENCODE_coverage_per_cell_matrix_csr = scipy.sparse.csr_matrix(ENCODE_coverage_per_cell_matrix.astype(pd.SparseDtype("float32",0)).sparse.to_coo())
-NameError: name 'scipy' is not defined
