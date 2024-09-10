@@ -1,6 +1,6 @@
 ### Code for the scATAcat Manuscript
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12583103.svg)](https://doi.org/10.5281/zenodo.12583103)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13381495.svg)](https://doi.org/10.5281/zenodo.13381495)
 
 This repository contains all the code necessary to reproduce the figures and analyses presented in the scATAcat Manuscript. Below is a brief overview of the repository structure:
 
@@ -13,7 +13,7 @@ This repository contains all the code necessary to reproduce the figures and ana
     - Peak calling and gene score calculation via ArchR
       
 - **Notebooks**
-    - Jupyter Notebooks to reproduce figures in the manuscript.
+    - Jupyter Notebooks to reproduce figures in the manuscript
     -  For each dataset, there is seperate folder for the following methods:
         - scATAcat
         - Marker-based annotation
